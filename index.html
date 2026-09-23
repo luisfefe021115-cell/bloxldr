@@ -2,1147 +2,563 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="theme-color" content="#070a12">
-<meta name="description" content="BloxLdr — catálogo gamer inspirado no universo Roblox.">
-<title>BloxLdr — Universo Gamer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BloxLdr — Wiki Roblox</title>
+
+<meta name="description"
+content="BloxLdr — Wiki de jogos Roblox com guias, informações, mapas, sistemas e novidades.">
 
 <style>
 :root{
-  --bg:#070a12;
-  --bg2:#0b0f1a;
-  --card:#101522;
-  --card2:#141a29;
-  --line:rgba(255,255,255,.08);
-  --text:#f7f9ff;
-  --muted:#8d98ad;
-  --blue:#4f7cff;
-  --cyan:#35d9ff;
-  --purple:#9b6cff;
-  --green:#35e39a;
-  --red:#ff5571;
-  --yellow:#ffd45a;
-  --shadow:0 20px 60px rgba(0,0,0,.38);
-  --radius:20px;
+  --bg:#07090d;
+  --bg2:#0b0f16;
+  --card:#101620;
+  --card2:#131a25;
+  --line:#222c3a;
+  --text:#f5f7fb;
+  --muted:#929eae;
+  --purple:#6c63ff;
+  --purple2:#918aff;
+  --green:#39d98a;
 }
 
-*{box-sizing:border-box;margin:0;padding:0}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
-html{scroll-behavior:smooth}
+html{
+  scroll-behavior:smooth;
+}
 
 body{
-  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   background:
-    radial-gradient(circle at 15% 5%,rgba(79,124,255,.12),transparent 28%),
-    radial-gradient(circle at 85% 10%,rgba(155,108,255,.10),transparent 25%),
+    radial-gradient(circle at 75% -10%,#211c55 0,#07090d 35%),
     var(--bg);
   color:var(--text);
-  min-height:100vh;
+  font-family:Arial,Helvetica,sans-serif;
+  line-height:1.5;
 }
 
-button,input,select{font:inherit}
-
-button{cursor:pointer}
-
-a{text-decoration:none;color:inherit}
-
-.container{
-  width:min(1180px,calc(100% - 32px));
-  margin:auto;
+button,
+input{
+  font:inherit;
 }
 
-/* TOP BAR */
+button{
+  cursor:pointer;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+/* TOPO */
+
 .topbar{
-  height:34px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:linear-gradient(90deg,#10182c,#151027,#10182c);
+  text-align:center;
+  padding:9px 15px;
+  background:#090c12;
   border-bottom:1px solid var(--line);
-  color:#aeb8cc;
-  font-size:12px;
-  letter-spacing:.2px;
+  color:#aeb7c5;
+  font-size:13px;
 }
 
-.topbar strong{color:#fff}
-
-/* HEADER */
 header{
   position:sticky;
   top:0;
-  z-index:100;
-  backdrop-filter:blur(18px);
-  background:rgba(7,10,18,.82);
+  z-index:20;
+  background:rgba(7,9,13,.92);
+  backdrop-filter:blur(15px);
   border-bottom:1px solid var(--line);
 }
 
 .nav{
-  height:76px;
+  max-width:1200px;
+  margin:auto;
+  min-height:70px;
+  padding:10px 20px;
   display:flex;
   align-items:center;
-  gap:28px;
+  gap:30px;
 }
 
-.brand{
+.logo{
   display:flex;
   align-items:center;
   gap:10px;
-  min-width:max-content;
-}
-
-.logo-mark{
-  width:38px;
-  height:38px;
-  position:relative;
-  transform:rotate(45deg);
-  filter:drop-shadow(0 0 12px rgba(79,124,255,.35));
-}
-
-.logo-mark span{
-  position:absolute;
-  display:block;
-  border-radius:5px;
-}
-
-.logo-mark .a{
-  width:18px;height:18px;
-  left:0;top:0;
-  background:#4f7cff;
-}
-
-.logo-mark .b{
-  width:18px;height:18px;
-  right:0;top:0;
-  background:#35d9ff;
-}
-
-.logo-mark .c{
-  width:18px;height:18px;
-  left:0;bottom:0;
-  background:#9b6cff;
-}
-
-.logo-mark .d{
-  width:18px;height:18px;
-  right:0;bottom:0;
-  background:#fff;
-}
-
-.logo-text{
-  font-size:22px;
   font-weight:900;
-  letter-spacing:-1px;
-  background:linear-gradient(90deg,#fff,#8fb2ff,#35d9ff);
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
+  font-size:21px;
+}
+
+.logo-icon{
+  width:36px;
+  height:36px;
+  border-radius:10px;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(135deg,var(--purple),#4941d0);
+  box-shadow:0 8px 25px #6c63ff30;
+}
+
+.logo-icon::after{
+  content:"B";
+  font-weight:900;
+  font-size:20px;
 }
 
 .navlinks{
   display:flex;
-  align-items:center;
-  gap:5px;
-  flex:1;
-}
-
-.navlinks button{
-  border:0;
-  background:transparent;
-  color:#9ca7bb;
-  padding:10px 13px;
-  border-radius:10px;
-  transition:.2s;
-}
-
-.navlinks button:hover,
-.navlinks button.active{
-  background:rgba(255,255,255,.06);
-  color:#fff;
-}
-
-.nav-actions{
-  display:flex;
-  align-items:center;
-  gap:8px;
-}
-
-.icon-btn{
-  width:42px;
-  height:42px;
-  border:1px solid var(--line);
-  background:rgba(255,255,255,.035);
-  color:#fff;
-  border-radius:12px;
-  position:relative;
-  transition:.2s;
-}
-
-.icon-btn:hover{
-  background:rgba(255,255,255,.08);
-  border-color:rgba(79,124,255,.4);
-  transform:translateY(-1px);
-}
-
-.badge{
-  position:absolute;
-  right:-5px;
-  top:-5px;
-  min-width:19px;
-  height:19px;
-  padding:0 5px;
-  border-radius:999px;
-  background:#4f7cff;
-  color:#fff;
-  font-size:10px;
-  font-weight:800;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border:2px solid var(--bg);
-}
-
-/* HERO */
-.hero{
-  padding:70px 0 35px;
-}
-
-.hero-grid{
-  display:grid;
-  grid-template-columns:1.25fr .75fr;
-  gap:25px;
-  align-items:stretch;
-}
-
-.hero-main{
-  min-height:390px;
-  padding:50px;
-  border:1px solid rgba(79,124,255,.2);
-  border-radius:30px;
-  background:
-    radial-gradient(circle at 80% 20%,rgba(53,217,255,.14),transparent 30%),
-    radial-gradient(circle at 10% 90%,rgba(155,108,255,.14),transparent 30%),
-    linear-gradient(145deg,#10182b,#0d111d);
-  box-shadow:var(--shadow);
-  position:relative;
-  overflow:hidden;
-}
-
-.hero-main:after{
-  content:"";
-  position:absolute;
-  width:300px;
-  height:300px;
-  border:1px solid rgba(255,255,255,.05);
-  border-radius:50%;
-  right:-100px;
-  bottom:-140px;
-}
-
-.eyebrow{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding:7px 11px;
-  border-radius:999px;
-  background:rgba(79,124,255,.1);
-  border:1px solid rgba(79,124,255,.22);
-  color:#91adff;
-  font-size:12px;
-  font-weight:800;
-  margin-bottom:20px;
-}
-
-.eyebrow i{
-  width:7px;
-  height:7px;
-  background:#35e39a;
-  border-radius:50%;
-  box-shadow:0 0 12px #35e39a;
-}
-
-.hero h1{
-  font-size:clamp(42px,5vw,70px);
-  line-height:.96;
-  letter-spacing:-3px;
-  max-width:650px;
-  margin-bottom:22px;
-}
-
-.hero h1 span{
-  background:linear-gradient(90deg,#fff,#83a8ff,#35d9ff);
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
-}
-
-.hero p{
-  color:#9ba6ba;
-  max-width:590px;
-  font-size:16px;
-  line-height:1.7;
-  margin-bottom:28px;
-}
-
-.hero-buttons{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-}
-
-.primary{
-  border:0;
-  color:#fff;
-  background:linear-gradient(135deg,#4f7cff,#6b5cff);
-  padding:13px 19px;
-  border-radius:12px;
-  font-weight:800;
-  box-shadow:0 10px 28px rgba(79,124,255,.22);
-  transition:.2s;
-}
-
-.primary:hover{
-  transform:translateY(-2px);
-  box-shadow:0 15px 35px rgba(79,124,255,.3);
-}
-
-.secondary{
-  border:1px solid var(--line);
-  color:#fff;
-  background:rgba(255,255,255,.045);
-  padding:13px 19px;
-  border-radius:12px;
-  font-weight:700;
-}
-
-.secondary:hover{background:rgba(255,255,255,.08)}
-
-.hero-side{
-  display:grid;
-  grid-template-rows:1fr 1fr;
-  gap:15px;
-}
-
-.hero-card{
-  border:1px solid var(--line);
-  border-radius:22px;
-  background:linear-gradient(145deg,#111827,#0d111b);
-  padding:25px;
-  position:relative;
-  overflow:hidden;
-}
-
-.hero-card h3{
-  font-size:14px;
-  color:#9ca7bb;
-  margin-bottom:9px;
-}
-
-.hero-card strong{
-  font-size:34px;
-  letter-spacing:-1px;
-}
-
-.hero-card .big-icon{
-  position:absolute;
-  right:25px;
-  bottom:15px;
-  font-size:65px;
-  opacity:.15;
-}
-
-/* TRUST */
-.trust{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:12px;
-  margin:25px 0 65px;
-}
-
-.trust-item{
-  border:1px solid var(--line);
-  background:rgba(255,255,255,.025);
-  padding:17px;
-  border-radius:15px;
-}
-
-.trust-item strong{
-  display:block;
-  font-size:13px;
-  margin-bottom:4px;
-}
-
-.trust-item span{
-  color:var(--muted);
-  font-size:11px;
-}
-
-/* SECTIONS */
-section{padding:25px 0 65px}
-
-.section-head{
-  display:flex;
-  align-items:end;
-  justify-content:space-between;
   gap:20px;
-  margin-bottom:22px;
-}
-
-.section-head h2{
-  font-size:27px;
-  letter-spacing:-1px;
-}
-
-.section-head p{
-  color:var(--muted);
-  font-size:13px;
-  margin-top:5px;
-}
-
-.link-btn{
-  border:0;
-  background:none;
-  color:#83a5ff;
-  font-size:13px;
-  font-weight:800;
-}
-
-/* GAMES */
-.games-grid{
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  gap:14px;
-}
-
-.game-card{
-  border:1px solid var(--line);
-  border-radius:20px;
-  padding:22px 18px;
-  background:linear-gradient(145deg,#111725,#0c1019);
-  transition:.25s;
-  position:relative;
-  overflow:hidden;
-  cursor:pointer;
-}
-
-.game-card:hover{
-  transform:translateY(-5px);
-  border-color:rgba(79,124,255,.35);
-  box-shadow:0 18px 35px rgba(0,0,0,.25);
-}
-
-.game-card:before{
-  content:"";
-  position:absolute;
-  width:100px;
-  height:100px;
-  border-radius:50%;
-  background:rgba(79,124,255,.08);
-  right:-45px;
-  top:-45px;
-}
-
-.game-icon{
-  width:55px;
-  height:55px;
-  display:grid;
-  place-items:center;
-  border-radius:16px;
-  background:rgba(255,255,255,.055);
-  font-size:28px;
-  margin-bottom:18px;
-}
-
-.game-card h3{
-  font-size:15px;
-  margin-bottom:7px;
-}
-
-.game-card p{
-  color:var(--muted);
-  font-size:11px;
-  line-height:1.5;
-}
-
-.game-card small{
-  display:block;
-  color:#637087;
-  margin-top:15px;
-}
-
-/* PRODUCTS */
-.product-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:15px;
-}
-
-.product-card{
-  background:linear-gradient(145deg,#111724,#0d111b);
-  border:1px solid var(--line);
-  border-radius:18px;
-  overflow:hidden;
-  transition:.22s;
-  position:relative;
-}
-
-.product-card:hover{
-  transform:translateY(-4px);
-  border-color:rgba(79,124,255,.3);
-  box-shadow:0 18px 35px rgba(0,0,0,.28);
-}
-
-.product-visual{
-  height:145px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:55px;
-  background:
-    radial-gradient(circle at center,rgba(79,124,255,.16),transparent 58%),
-    linear-gradient(145deg,#121a2b,#0b0f18);
-  position:relative;
-}
-
-.product-visual:after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(135deg,transparent 35%,rgba(255,255,255,.025));
-}
-
-.product-tag{
-  position:absolute;
-  top:11px;
-  left:11px;
-  z-index:2;
-  background:rgba(79,124,255,.16);
-  border:1px solid rgba(79,124,255,.3);
-  color:#9bb4ff;
-  padding:5px 8px;
-  border-radius:7px;
-  font-size:9px;
-  font-weight:900;
-  text-transform:uppercase;
-}
-
-.fav{
-  position:absolute;
-  right:10px;
-  top:10px;
-  z-index:3;
-  width:32px;
-  height:32px;
-  border:1px solid rgba(255,255,255,.1);
-  border-radius:9px;
-  background:rgba(0,0,0,.28);
-  color:#9ca7bb;
-}
-
-.fav.active{color:#ff5e78}
-
-.product-info{padding:16px}
-
-.product-game{
-  color:#71809a;
-  font-size:10px;
-  font-weight:800;
-  text-transform:uppercase;
-  letter-spacing:.5px;
-  margin-bottom:7px;
-}
-
-.product-name{
+  color:#aab4c3;
   font-size:14px;
-  font-weight:800;
-  line-height:1.35;
-  min-height:38px;
 }
 
-.product-bottom{
-  display:flex;
-  align-items:end;
-  justify-content:space-between;
-  gap:10px;
-  margin-top:17px;
-}
-
-.price{
-  font-size:18px;
-  font-weight:900;
-}
-
-.stock{
-  color:#5ee6ae;
-  font-size:9px;
-  margin-top:3px;
-}
-
-.add-btn{
-  border:1px solid rgba(79,124,255,.28);
-  background:rgba(79,124,255,.11);
-  color:#a9beff;
-  border-radius:9px;
-  padding:8px 10px;
-  font-size:11px;
-  font-weight:800;
-}
-
-.add-btn:hover{
-  background:#4f7cff;
-  color:#fff;
-}
-
-/* CATALOG */
-.catalog-toolbar{
-  display:grid;
-  grid-template-columns:1fr 190px;
-  gap:10px;
-  margin-bottom:15px;
+.navlinks a:hover{
+  color:white;
 }
 
 .search{
+  margin-left:auto;
   position:relative;
 }
 
 .search input{
-  width:100%;
-  height:47px;
-  padding:0 15px 0 43px;
+  width:250px;
+  padding:11px 13px 11px 38px;
   border:1px solid var(--line);
   border-radius:12px;
-  background:#0e131f;
-  color:#fff;
+  background:#0d131c;
+  color:white;
   outline:none;
-}
-
-.search input:focus{
-  border-color:rgba(79,124,255,.5);
 }
 
 .search span{
   position:absolute;
-  left:15px;
-  top:14px;
-  color:#65738b;
+  left:13px;
+  top:8px;
+  color:#8b96a6;
 }
 
-.sort{
-  height:47px;
+/* HERO */
+
+.hero{
+  max-width:1200px;
+  margin:auto;
+  padding:80px 20px 55px;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.3fr .7fr;
+  gap:25px;
+}
+
+.eyebrow{
+  color:var(--purple2);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  margin-bottom:12px;
+}
+
+.hero h1{
+  font-size:clamp(45px,6vw,75px);
+  line-height:.98;
+  letter-spacing:-.05em;
+  margin-bottom:20px;
+}
+
+.hero h1 span{
+  color:var(--purple2);
+}
+
+.hero p{
+  max-width:680px;
+  color:#aeb8c7;
+  font-size:17px;
+}
+
+.buttons{
+  display:flex;
+  gap:12px;
+  margin-top:28px;
+  flex-wrap:wrap;
+}
+
+.btn{
   border:1px solid var(--line);
+  background:#111722;
+  color:white;
+  padding:12px 18px;
   border-radius:12px;
-  background:#0e131f;
-  color:#fff;
-  padding:0 12px;
+  font-weight:700;
+}
+
+.btn.primary{
+  background:var(--purple);
+  border-color:var(--purple);
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.hero-card{
+  background:linear-gradient(145deg,#121827,#0b1017);
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:25px;
+}
+
+.hero-card h2{
+  font-size:27px;
+}
+
+.hero-card p{
+  font-size:14px;
+  margin-top:8px;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin-top:22px;
+}
+
+.stat{
+  background:#0b1018;
+  border:1px solid var(--line);
+  border-radius:13px;
+  padding:14px;
+}
+
+.stat strong{
+  display:block;
+  font-size:23px;
+}
+
+.stat small{
+  color:var(--muted);
+}
+
+/* SECTIONS */
+
+.section{
+  max-width:1200px;
+  margin:auto;
+  padding:35px 20px;
+}
+
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  margin-bottom:20px;
+}
+
+.section-head h2{
+  font-size:29px;
+  letter-spacing:-.03em;
+}
+
+.section-head p{
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* JOGOS */
+
+.games{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+}
+
+.game{
+  background:linear-gradient(145deg,#101620,#0c1118);
+  border:1px solid var(--line);
+  border-radius:17px;
+  padding:19px;
+  transition:.18s;
+}
+
+.game:hover{
+  transform:translateY(-4px);
+  border-color:#414b60;
+}
+
+.game-icon{
+  font-size:34px;
+  margin-bottom:20px;
+}
+
+.game h3{
+  font-size:17px;
+  margin-bottom:6px;
+}
+
+.game p{
+  color:var(--muted);
+  font-size:12px;
+  min-height:38px;
+}
+
+.tag{
+  display:inline-block;
+  margin-top:14px;
+  padding:5px 8px;
+  border-radius:999px;
+  background:#6c63ff18;
+  border:1px solid #6c63ff42;
+  color:#b9b4ff;
+  font-size:10px;
+}
+
+/* BUSCA */
+
+.search-box{
+  display:flex;
+  margin-bottom:16px;
+}
+
+.search-box input{
+  width:100%;
+  padding:14px;
+  background:#0c1118;
+  border:1px solid var(--line);
+  border-radius:13px;
+  color:white;
   outline:none;
 }
 
-.chips{
+.filters{
   display:flex;
   gap:8px;
   flex-wrap:wrap;
-  margin-bottom:22px;
+  margin-bottom:18px;
 }
 
 .chip{
   border:1px solid var(--line);
-  color:#9aa5b9;
-  background:rgba(255,255,255,.025);
+  background:#0d131c;
+  color:#9da8b7;
   padding:9px 13px;
   border-radius:999px;
-  font-size:11px;
-  font-weight:800;
+  font-size:12px;
 }
 
 .chip.active,
 .chip:hover{
-  background:#4f7cff;
-  color:#fff;
-  border-color:#4f7cff;
+  background:#6c63ff18;
+  color:#dcd9ff;
+  border-color:#6c63ff55;
 }
 
-.results-count{
-  color:#65738b;
-  font-size:11px;
-  margin-bottom:15px;
-}
+/* GUIAS */
 
-/* EMPTY */
-.empty{
-  text-align:center;
-  padding:70px 20px;
-  border:1px dashed var(--line);
-  border-radius:20px;
-  color:#7f8ba0;
-}
-
-.empty strong{
-  display:block;
-  color:#fff;
-  margin-bottom:7px;
-}
-
-/* ACCOUNT */
-.account-box{
+.articles{
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:15px;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
 }
 
-.account-card{
-  background:linear-gradient(145deg,#111724,#0d111b);
+.article{
+  background:#0d121a;
   border:1px solid var(--line);
-  border-radius:20px;
-  padding:25px;
+  border-radius:16px;
+  padding:19px;
 }
 
-.account-card h3{margin-bottom:15px}
+.article-icon{
+  font-size:27px;
+  margin-bottom:12px;
+}
 
-.account-stat{
-  display:flex;
-  justify-content:space-between;
-  padding:13px 0;
-  border-bottom:1px solid var(--line);
-  color:#9ca7bb;
+.article h3{
+  font-size:16px;
+  margin:8px 0;
+}
+
+.article p{
+  color:var(--muted);
   font-size:13px;
 }
 
-.account-stat:last-child{border-bottom:0}
-
-.account-stat strong{color:#fff}
-
-/* FOOTER */
-footer{
-  margin-top:35px;
-  border-top:1px solid var(--line);
-  background:#05070c;
-  padding:45px 0 25px;
-}
-
-.footer-grid{
-  display:grid;
-  grid-template-columns:1.5fr 1fr 1fr 1fr;
-  gap:30px;
-}
-
-.footer-brand p{
-  color:#68758a;
-  font-size:12px;
-  line-height:1.7;
-  max-width:320px;
-  margin-top:13px;
-}
-
-footer h4{
-  font-size:12px;
-  margin-bottom:13px;
-}
-
-footer a,
-footer button{
-  display:block;
+.article button{
+  margin-top:15px;
   border:0;
   background:none;
-  color:#68758a;
-  font-size:11px;
-  margin:9px 0;
-}
-
-footer a:hover,
-footer button:hover{color:#fff}
-
-.footer-bottom{
-  margin-top:35px;
-  padding-top:18px;
-  border-top:1px solid var(--line);
-  color:#4f5b6d;
-  font-size:10px;
-  display:flex;
-  justify-content:space-between;
+  color:#9d96ff;
+  font-weight:700;
 }
 
 /* MODAL */
-.overlay{
+
+.modal-bg{
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,.72);
-  backdrop-filter:blur(7px);
-  z-index:500;
+  z-index:50;
+  background:#000b;
   display:none;
   align-items:center;
   justify-content:center;
-  padding:18px;
+  padding:20px;
 }
 
-.overlay.open{display:flex}
+.modal-bg.show{
+  display:flex;
+}
 
 .modal{
-  width:min(720px,100%);
-  max-height:90vh;
+  width:min(760px,100%);
+  max-height:88vh;
   overflow:auto;
-  background:#0e1420;
-  border:1px solid rgba(255,255,255,.1);
-  border-radius:24px;
-  box-shadow:0 35px 100px rgba(0,0,0,.55);
-  position:relative;
+  background:#0d121a;
+  border:1px solid #293242;
+  border-radius:22px;
+  padding:25px;
+  box-shadow:0 25px 80px #000;
 }
 
-.modal-close{
-  position:absolute;
-  top:15px;
-  right:15px;
-  width:35px;
-  height:35px;
-  border:1px solid var(--line);
+.modal-top{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.close{
+  width:38px;
+  height:38px;
+  border:0;
   border-radius:10px;
-  background:rgba(255,255,255,.05);
-  color:#fff;
-  z-index:2;
+  background:#171d27;
+  color:white;
 }
 
-.modal-content{padding:28px}
-
-.product-detail{
-  display:grid;
-  grid-template-columns:220px 1fr;
-  gap:25px;
+.modal h2{
+  font-size:30px;
+  margin:6px 0 10px;
 }
 
-.detail-visual{
-  min-height:220px;
-  border-radius:18px;
-  display:grid;
-  place-items:center;
-  font-size:85px;
-  background:
-    radial-gradient(circle,rgba(79,124,255,.2),transparent 60%),
-    #0a0f19;
-  border:1px solid var(--line);
-}
-
-.detail-game{
-  color:#71809a;
-  text-transform:uppercase;
-  font-size:10px;
-  font-weight:800;
-}
-
-.detail-title{
-  font-size:28px;
-  line-height:1.1;
-  margin:8px 0 12px;
-}
-
-.detail-description{
-  color:#8d98ad;
-  font-size:13px;
-  line-height:1.7;
+.modal-description{
+  color:#aeb8c7;
   margin-bottom:20px;
 }
 
-.detail-price{
-  font-size:28px;
-  font-weight:900;
-  margin-bottom:18px;
-}
-
-/* CART */
-.cart{
-  position:fixed;
-  top:0;
-  right:-450px;
-  width:min(430px,100%);
-  height:100vh;
-  background:#0b101a;
-  border-left:1px solid var(--line);
-  z-index:600;
-  transition:.3s;
-  box-shadow:-25px 0 70px rgba(0,0,0,.35);
-  display:flex;
-  flex-direction:column;
-}
-
-.cart.open{right:0}
-
-.cart-head{
-  height:75px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 20px;
-  border-bottom:1px solid var(--line);
-}
-
-.cart-head h3{font-size:17px}
-
-.cart-close{
-  border:0;
-  background:none;
-  color:#fff;
-  font-size:21px;
-}
-
-.cart-items{
-  flex:1;
-  overflow:auto;
-  padding:15px;
-}
-
-.cart-item{
+.info-grid{
   display:grid;
-  grid-template-columns:48px 1fr auto;
-  gap:11px;
-  align-items:center;
-  padding:12px 0;
-  border-bottom:1px solid var(--line);
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
 }
 
-.cart-item-icon{
-  width:48px;
-  height:48px;
-  border-radius:12px;
-  display:grid;
-  place-items:center;
-  background:#111a2a;
-  font-size:22px;
-}
-
-.cart-item h4{
-  font-size:12px;
-  line-height:1.3;
-}
-
-.cart-item small{
-  color:#6e7b91;
-  font-size:10px;
-}
-
-.qty{
-  display:flex;
-  align-items:center;
-  gap:5px;
-  margin-top:7px;
-}
-
-.qty button{
-  width:22px;
-  height:22px;
+.info{
+  background:#101620;
   border:1px solid var(--line);
-  background:#121927;
-  color:#fff;
-  border-radius:6px;
+  border-radius:13px;
+  padding:14px;
 }
 
-.cart-item-price{
-  text-align:right;
-  font-size:12px;
-  font-weight:800;
-}
-
-.remove{
-  border:0;
-  background:none;
-  color:#ff647d;
-  font-size:10px;
-  margin-top:5px;
-}
-
-.cart-bottom{
-  border-top:1px solid var(--line);
-  padding:18px;
-}
-
-.total-row{
-  display:flex;
-  justify-content:space-between;
-  margin-bottom:9px;
-  color:#8c97aa;
-  font-size:12px;
-}
-
-.total-row.final{
-  color:#fff;
-  font-size:18px;
-  font-weight:900;
-  margin-top:13px;
-  padding-top:13px;
-  border-top:1px solid var(--line);
-}
-
-.coupon{
-  display:flex;
-  gap:7px;
-  margin:14px 0;
-}
-
-.coupon input{
-  flex:1;
-  min-width:0;
-  height:39px;
-  background:#0e1420;
-  color:#fff;
-  border:1px solid var(--line);
-  border-radius:9px;
-  padding:0 10px;
-  outline:none;
-}
-
-.coupon button{
-  border:1px solid var(--line);
-  background:#161e2e;
-  color:#fff;
-  border-radius:9px;
-  padding:0 12px;
-  font-size:11px;
-  font-weight:800;
-}
-
-.checkout-btn{
-  width:100%;
-  height:46px;
-  border:0;
-  border-radius:11px;
-  background:linear-gradient(135deg,#4f7cff,#715cff);
-  color:#fff;
-  font-weight:900;
-}
-
-/* FORM */
-.form-group{margin-bottom:14px}
-
-.form-group label{
+.info strong{
   display:block;
-  font-size:11px;
-  color:#9ca7bb;
-  margin-bottom:7px;
+  margin-bottom:3px;
 }
 
-.form-group input{
-  width:100%;
-  height:44px;
-  border:1px solid var(--line);
-  border-radius:10px;
-  background:#0a0f18;
-  color:#fff;
-  padding:0 12px;
-  outline:none;
-}
-
-.form-group input:focus{
-  border-color:rgba(79,124,255,.5);
-}
-
-.notice{
-  background:rgba(255,212,90,.07);
-  border:1px solid rgba(255,212,90,.16);
-  color:#d9c277;
-  border-radius:11px;
-  padding:11px 13px;
-  font-size:10px;
-  line-height:1.5;
-  margin:15px 0;
-}
-
-/* TOAST */
-.toast{
-  position:fixed;
-  left:50%;
-  bottom:25px;
-  transform:translate(-50%,20px);
-  background:#151c2a;
-  border:1px solid rgba(255,255,255,.1);
-  color:#fff;
-  padding:12px 17px;
-  border-radius:11px;
+.info span{
+  color:var(--muted);
   font-size:12px;
-  opacity:0;
-  pointer-events:none;
-  z-index:1000;
-  transition:.25s;
-  box-shadow:0 15px 40px rgba(0,0,0,.35);
 }
 
-.toast.show{
-  opacity:1;
-  transform:translate(-50%,0);
+.guide-list{
+  display:grid;
+  gap:9px;
+  margin-top:20px;
 }
 
-/* MOBILE */
-.mobile-nav{display:none}
-
-@media(max-width:1000px){
-  .games-grid{grid-template-columns:repeat(3,1fr)}
-  .product-grid{grid-template-columns:repeat(3,1fr)}
-  .hero-grid{grid-template-columns:1fr}
-  .hero-side{grid-template-columns:1fr 1fr;grid-template-rows:none}
-  .footer-grid{grid-template-columns:1.4fr 1fr 1fr}
+.guide{
+  background:#101620;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:13px;
+  color:#cbd2dd;
 }
 
-@media(max-width:760px){
-  .container{width:min(100% - 22px,600px)}
+/* FOOTER */
 
-  .nav{height:65px}
-  .navlinks{display:none}
-  .logo-text{font-size:20px}
+footer{
+  margin-top:55px;
+  border-top:1px solid var(--line);
+  padding:32px 20px;
+  text-align:center;
+  color:#758092;
+  font-size:12px;
+}
 
-  .hero{padding-top:35px}
-  .hero-main{padding:30px 24px;min-height:390px}
-  .hero h1{font-size:44px;letter-spacing:-2px}
-  .hero-side{display:grid}
+/* RESPONSIVO */
 
-  .trust{grid-template-columns:1fr 1fr;margin-bottom:35px}
+@media(max-width:900px){
 
-  .games-grid{grid-template-columns:repeat(2,1fr)}
-  .product-grid{grid-template-columns:repeat(2,1fr)}
-
-  .catalog-toolbar{grid-template-columns:1fr}
-
-  .account-box{grid-template-columns:1fr}
-
-  .footer-grid{grid-template-columns:1fr 1fr}
-  .footer-brand{grid-column:1/-1}
-
-  .product-detail{grid-template-columns:1fr}
-  .detail-visual{min-height:170px}
-
-  .mobile-nav{
-    display:flex;
-    position:fixed;
-    bottom:10px;
-    left:10px;
-    right:10px;
-    z-index:300;
-    height:58px;
-    border:1px solid rgba(255,255,255,.1);
-    background:rgba(12,17,27,.94);
-    backdrop-filter:blur(15px);
-    border-radius:17px;
-    justify-content:space-around;
-    align-items:center;
-    box-shadow:0 15px 40px rgba(0,0,0,.4);
+  .hero-grid{
+    grid-template-columns:1fr;
   }
 
-  .mobile-nav button{
-    border:0;
-    background:none;
-    color:#768298;
-    font-size:10px;
+  .games{
+    grid-template-columns:repeat(2,1fr);
   }
 
-  .mobile-nav button.active{color:#fff}
+  .articles{
+    grid-template-columns:repeat(2,1fr);
+  }
 
-  footer{padding-bottom:90px}
+  .navlinks{
+    display:none;
+  }
+
+  .search input{
+    width:190px;
+  }
 }
 
-@media(max-width:470px){
-  .hero-side{grid-template-columns:1fr}
-  .hero h1{font-size:38px}
-  .trust{grid-template-columns:1fr 1fr}
-  .product-grid{gap:9px}
-  .product-info{padding:12px}
-  .product-visual{height:125px}
-  .product-name{font-size:12px}
-  .price{font-size:16px}
-  .add-btn{padding:7px}
+@media(max-width:560px){
+
+  .nav{
+    padding:10px 14px;
+  }
+
+  .search{
+    display:none;
+  }
+
+  .hero{
+    padding-top:55px;
+  }
+
+  .hero h1{
+    font-size:48px;
+  }
+
+  .games,
+  .articles{
+    grid-template-columns:1fr;
+  }
+
+  .stats{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .section{
+    padding-left:15px;
+    padding-right:15px;
+  }
+
+  .info-grid{
+    grid-template-columns:1fr;
+  }
 }
 </style>
 </head>
@@ -1150,1356 +566,777 @@ footer button:hover{color:#fff}
 <body>
 
 <div class="topbar">
-  <span>⚡ <strong>BloxLdr</strong> • catálogo gamer em um só lugar</span>
+📚 BloxLdr Wiki • Guias, informações e novidades sobre jogos Roblox
 </div>
 
 <header>
-  <div class="container nav">
 
-    <a class="brand" href="#" onclick="showPage('home');return false;">
-      <div class="logo-mark">
-        <span class="a"></span>
-        <span class="b"></span>
-        <span class="c"></span>
-        <span class="d"></span>
-      </div>
-      <div class="logo-text">BloxLdr</div>
-    </a>
+<nav class="nav">
 
-    <nav class="navlinks">
-      <button data-page="home" onclick="showPage('home')">Início</button>
-      <button data-page="games" onclick="showPage('games')">Jogos</button>
-      <button data-page="catalog" onclick="showPage('catalog')">Catálogo</button>
-      <button data-page="favorites" onclick="showPage('favorites')">
-        Favoritos <span id="favCountNav"></span>
-      </button>
-      <button data-page="account" onclick="showPage('account')">Minha conta</button>
-    </nav>
+<a href="#" class="logo" onclick="home()">
+<span class="logo-icon"></span>
+BloxLdr
+</a>
 
-    <div class="nav-actions">
-      <button class="icon-btn" onclick="openCart()" title="Carrinho">
-        🛒
-        <span class="badge" id="cartBadge">0</span>
-      </button>
-    </div>
+<div class="navlinks">
+<a href="#jogos">Jogos</a>
+<a href="#guias">Guias</a>
+<a href="#novidades">Novidades</a>
+<a href="#sobre">Sobre</a>
+</div>
 
-  </div>
+<div class="search">
+<span>⌕</span>
+<input
+id="globalSearch"
+placeholder="Pesquisar..."
+oninput="globalSearch(this.value)"
+>
+</div>
+
+</nav>
+
 </header>
 
 <main>
 
-<!-- HOME -->
-<section id="page-home">
-  <div class="container">
+<!-- HERO -->
 
-    <div class="hero">
-      <div class="hero-grid">
+<section class="hero">
 
-        <div class="hero-main">
-          <div class="eyebrow"><i></i> CATÁLOGO ONLINE</div>
+<div class="hero-grid">
 
-          <h1>
-            Seu universo<br>
-            <span>Roblox.</span>
-          </h1>
+<div>
 
-          <p>
-            Explore jogos, categorias e produtos em uma experiência
-            criada para deixar sua navegação mais rápida, organizada
-            e com visual gamer de verdade.
-          </p>
+<div class="eyebrow">
+ROBLOX • WIKI EM PORTUGUÊS
+</div>
 
-          <div class="hero-buttons">
-            <button class="primary" onclick="showPage('catalog')">
-              Explorar catálogo →
-            </button>
+<h1>
+Explore.<br>
+Aprenda.<br>
+<span>Jogue melhor.</span>
+</h1>
 
-            <button class="secondary" onclick="showPage('games')">
-              Ver jogos
-            </button>
-          </div>
-        </div>
+<p>
+Uma central de informações para descobrir jogos,
+entender sistemas, encontrar guias e acompanhar
+novidades do universo Roblox.
+</p>
 
-        <div class="hero-side">
+<div class="buttons">
 
-          <div class="hero-card">
-            <h3>PRODUTOS NO CATÁLOGO</h3>
-            <strong>125+</strong>
-            <div class="big-icon">◈</div>
-          </div>
+<button
+class="btn primary"
+onclick="document.getElementById('jogos').scrollIntoView()">
+🎮 Explorar jogos
+</button>
 
-          <div class="hero-card">
-            <h3>UNIVERSOS DISPONÍVEIS</h3>
-            <strong>05</strong>
-            <div class="big-icon">✦</div>
-          </div>
+<button
+class="btn"
+onclick="document.getElementById('guias').scrollIntoView()">
+📚 Ver guias
+</button>
 
-        </div>
+</div>
 
-      </div>
-    </div>
+</div>
 
-    <div class="trust">
-      <div class="trust-item">
-        <strong>⚡ Navegação rápida</strong>
-        <span>Encontre produtos em poucos cliques.</span>
-      </div>
+<div class="hero-card">
 
-      <div class="trust-item">
-        <strong>🔎 Busca inteligente</strong>
-        <span>Pesquise por nome ou categoria.</span>
-      </div>
+<div class="eyebrow">
+BLOXLDR WIKI
+</div>
 
-      <div class="trust-item">
-        <strong>❤️ Favoritos</strong>
-        <span>Guarde seus produtos preferidos.</span>
-      </div>
+<h2>
+Seu ponto de partida no Roblox.
+</h2>
 
-      <div class="trust-item">
-        <strong>🛒 Carrinho salvo</strong>
-        <span>Seu carrinho permanece no navegador.</span>
-      </div>
-    </div>
+<p>
+Conteúdo organizado por jogo para você encontrar
+o que procura sem complicação.
+</p>
 
-    <div class="section-head">
-      <div>
-        <h2>Jogos em destaque</h2>
-        <p>Escolha um universo e explore o catálogo.</p>
-      </div>
-      <button class="link-btn" onclick="showPage('games')">Ver todos →</button>
-    </div>
+<div class="stats">
 
-    <div id="homeGames" class="games-grid"></div>
+<div class="stat">
+<strong>12</strong>
+<small>jogos</small>
+</div>
 
-  </div>
+<div class="stat">
+<strong>50+</strong>
+<small>guias</small>
+</div>
+
+<div class="stat">
+<strong>∞</strong>
+<small>ideias</small>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
-<!-- GAMES -->
-<section id="page-games" style="display:none">
-  <div class="container">
 
-    <div class="section-head">
-      <div>
-        <h2>Todos os jogos</h2>
-        <p>Explore os universos disponíveis no BloxLdr.</p>
-      </div>
-    </div>
+<!-- JOGOS -->
 
-    <div id="gamesGrid" class="games-grid"></div>
+<section class="section" id="jogos">
 
-  </div>
+<div class="section-head">
+
+<div>
+<h2>🎮 Jogos</h2>
+<p>Escolha um jogo para abrir sua central de informações.</p>
+</div>
+
+</div>
+
+<div class="games" id="games"></div>
+
 </section>
 
-<!-- CATALOG -->
-<section id="page-catalog" style="display:none">
-  <div class="container">
 
-    <div class="section-head">
-      <div>
-        <h2>Catálogo</h2>
-        <p>Encontre exatamente o que está procurando.</p>
-      </div>
-    </div>
+<!-- GUIAS -->
 
-    <div class="catalog-toolbar">
+<section class="section" id="guias">
 
-      <div class="search">
-        <span>⌕</span>
-        <input
-          id="searchInput"
-          type="text"
-          placeholder="Pesquisar produto..."
-          oninput="renderCatalog()"
-        >
-      </div>
+<div class="section-head">
 
-      <select id="sortSelect" class="sort" onchange="renderCatalog()">
-        <option value="featured">Destaques</option>
-        <option value="low">Menor preço</option>
-        <option value="high">Maior preço</option>
-        <option value="az">Nome A–Z</option>
-        <option value="za">Nome Z–A</option>
-      </select>
+<div>
+<h2>📚 Guias e conteúdos</h2>
+<p>Conteúdos rápidos para consultar enquanto você joga.</p>
+</div>
 
-    </div>
+</div>
 
-    <div id="chips" class="chips"></div>
+<div class="search-box">
 
-    <div id="resultsCount" class="results-count"></div>
+<input
+id="contentSearch"
+placeholder="Pesquisar jogo, guia ou assunto..."
+oninput="filterContent(this.value)"
+>
 
-    <div id="catalogGrid" class="product-grid"></div>
+</div>
 
-  </div>
+<div class="filters">
+
+<button
+class="chip active"
+onclick="setFilter('Todos',this)">
+Todos
+</button>
+
+<button
+class="chip"
+onclick="setFilter('Guias',this)">
+Guias
+</button>
+
+<button
+class="chip"
+onclick="setFilter('Sistemas',this)">
+Sistemas
+</button>
+
+<button
+class="chip"
+onclick="setFilter('Mapas',this)">
+Mapas
+</button>
+
+<button
+class="chip"
+onclick="setFilter('Atualizações',this)">
+Atualizações
+</button>
+
+</div>
+
+<div class="articles" id="articles"></div>
+
 </section>
 
-<!-- FAVORITES -->
-<section id="page-favorites" style="display:none">
-  <div class="container">
 
-    <div class="section-head">
-      <div>
-        <h2>Seus favoritos</h2>
-        <p>Produtos que você marcou para encontrar depois.</p>
-      </div>
-    </div>
+<!-- NOVIDADES -->
 
-    <div id="favoritesGrid" class="product-grid"></div>
+<section class="section" id="novidades">
 
-  </div>
+<div class="section-head">
+
+<div>
+<h2>🆕 Novidades</h2>
+<p>Área para acompanhar mudanças nos jogos.</p>
+</div>
+
+</div>
+
+<div class="articles">
+
+<div class="article">
+<div class="article-icon">🔔</div>
+<h3>Atualizações dos jogos</h3>
+<p>
+Novos conteúdos, eventos, sistemas e mudanças
+podem ser organizados aqui.
+</p>
+</div>
+
+<div class="article">
+<div class="article-icon">🧭</div>
+<h3>Novos guias</h3>
+<p>
+A biblioteca pode crescer conforme novos conteúdos
+forem adicionados ao BloxLdr.
+</p>
+</div>
+
+<div class="article">
+<div class="article-icon">⭐</div>
+<h3>Favoritos</h3>
+<p>
+Salve seus jogos preferidos para encontrá-los
+rapidamente neste navegador.
+</p>
+</div>
+
+</div>
+
 </section>
 
-<!-- ACCOUNT -->
-<section id="page-account" style="display:none">
-  <div class="container">
 
-    <div class="section-head">
-      <div>
-        <h2>Minha conta</h2>
-        <p>Resumo da sua atividade no BloxLdr.</p>
-      </div>
-    </div>
+<!-- SOBRE -->
 
-    <div class="account-box">
+<section class="section" id="sobre">
 
-      <div class="account-card">
-        <h3>👤 Perfil</h3>
+<div class="hero-card">
 
-        <div class="account-stat">
-          <span>Status</span>
-          <strong>Ativo</strong>
-        </div>
+<div class="eyebrow">
+SOBRE O BLOXLDR
+</div>
 
-        <div class="account-stat">
-          <span>Favoritos</span>
-          <strong id="accountFav">0</strong>
-        </div>
+<h2>
+Uma wiki feita para jogadores.
+</h2>
 
-        <div class="account-stat">
-          <span>Itens no carrinho</span>
-          <strong id="accountCart">0</strong>
-        </div>
-      </div>
+<p>
+O BloxLdr organiza informações sobre jogos Roblox
+em páginas simples, rápidas e fáceis de consultar.
+</p>
 
-      <div class="account-card">
-        <h3>📦 Histórico de pedidos</h3>
+</div>
 
-        <div class="account-stat">
-          <span>Pedido #1048</span>
-          <strong>R$ 49,80</strong>
-        </div>
-
-        <div class="account-stat">
-          <span>Pedido #1037</span>
-          <strong>R$ 29,90</strong>
-        </div>
-
-        <div class="account-stat">
-          <span>Pedido #1021</span>
-          <strong>R$ 67,70</strong>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
 </section>
 
 </main>
 
+
 <footer>
-  <div class="container">
 
-    <div class="footer-grid">
+BloxLdr Wiki • Projeto independente de conteúdo sobre jogos Roblox.
+<br><br>
+Roblox é uma marca de seus respectivos proprietários.
 
-      <div class="footer-brand">
-        <div class="brand">
-          <div class="logo-mark">
-            <span class="a"></span>
-            <span class="b"></span>
-            <span class="c"></span>
-            <span class="d"></span>
-          </div>
-          <div class="logo-text">BloxLdr</div>
-        </div>
-
-        <p>
-          Um catálogo gamer inspirado no universo Roblox,
-          desenvolvido com foco em organização, navegação
-          simples e experiência visual.
-        </p>
-      </div>
-
-      <div>
-        <h4>NAVEGAÇÃO</h4>
-        <button onclick="showPage('home')">Início</button>
-        <button onclick="showPage('games')">Jogos</button>
-        <button onclick="showPage('catalog')">Catálogo</button>
-        <button onclick="showPage('favorites')">Favoritos</button>
-      </div>
-
-      <div>
-        <h4>CATÁLOGO</h4>
-        <button onclick="setCategory('Blox Fruits')">Blox Fruits</button>
-        <button onclick="setCategory('Brookhaven')">Brookhaven</button>
-        <button onclick="setCategory('99 Nights in the Forest')">99 Nights</button>
-        <button onclick="setCategory('RIVALS')">RIVALS</button>
-      </div>
-
-      <div>
-        <h4>OUTROS</h4>
-        <button onclick="showPage('account')">Minha conta</button>
-        <button onclick="openCart()">Carrinho</button>
-        <button onclick="showPage('catalog')">Pesquisar</button>
-      </div>
-
-    </div>
-
-    <div class="footer-bottom">
-      <span>© 2026 BloxLdr</span>
-      <span>Projeto independente</span>
-    </div>
-
-  </div>
 </footer>
 
-<!-- MOBILE NAV -->
-<div class="mobile-nav">
-  <button onclick="showPage('home')">⌂<br>Início</button>
-  <button onclick="showPage('games')">◈<br>Jogos</button>
-  <button onclick="showPage('catalog')">⌕<br>Catálogo</button>
-  <button onclick="showPage('favorites')">♡<br>Favoritos</button>
-  <button onclick="openCart()">🛒<br>Carrinho</button>
+
+<!-- MODAL -->
+
+<div
+class="modal-bg"
+id="modal"
+onclick="outsideModal(event)"
+>
+
+<div class="modal">
+
+<div class="modal-top">
+
+<div>
+
+<div class="eyebrow" id="modalCategory">
+JOGO
 </div>
 
-<!-- PRODUCT MODAL -->
-<div id="productOverlay" class="overlay" onclick="overlayClose(event,'productOverlay')">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal()">×</button>
-    <div id="productModalContent" class="modal-content"></div>
-  </div>
+<h2 id="modalTitle"></h2>
+
 </div>
 
-<!-- CHECKOUT -->
-<div id="checkoutOverlay" class="overlay">
-  <div class="modal">
-    <button class="modal-close" onclick="closeCheckout()">×</button>
+<button
+class="close"
+onclick="closeModal()">
+✕
+</button>
 
-    <div class="modal-content">
-
-      <div class="eyebrow"><i></i> FINALIZAÇÃO</div>
-
-      <h2 style="margin-bottom:8px">Finalizar pedido</h2>
-
-      <p style="color:#7f8ba0;font-size:12px;margin-bottom:20px">
-        Preencha seus dados para registrar o pedido.
-      </p>
-
-      <div class="form-group">
-        <label>NOME</label>
-        <input id="checkoutName" type="text" placeholder="Seu nome">
-      </div>
-
-      <div class="form-group">
-        <label>E-MAIL</label>
-        <input id="checkoutEmail" type="email" placeholder="seu@email.com">
-      </div>
-
-      <div class="notice">
-        ℹ️ Este checkout é uma simulação. Nenhum pagamento será processado.
-      </div>
-
-      <button class="checkout-btn" onclick="finishCheckout()">
-        Registrar pedido
-      </button>
-
-    </div>
-  </div>
 </div>
 
-<!-- CART -->
-<aside id="cartDrawer" class="cart">
+<p
+class="modal-description"
+id="modalDescription">
+</p>
 
-  <div class="cart-head">
-    <h3>Seu carrinho</h3>
-    <button class="cart-close" onclick="closeCart()">×</button>
-  </div>
+<div
+class="info-grid"
+id="modalInfo">
+</div>
 
-  <div id="cartItems" class="cart-items"></div>
+<div
+class="guide-list"
+id="modalGuides">
+</div>
 
-  <div class="cart-bottom">
+</div>
 
-    <div class="total-row">
-      <span>Subtotal</span>
-      <strong id="subtotal">R$ 0,00</strong>
-    </div>
+</div>
 
-    <div class="total-row">
-      <span>Desconto automático</span>
-      <strong id="autoDiscount">R$ 0,00</strong>
-    </div>
-
-    <div class="total-row">
-      <span>Cupom</span>
-      <strong id="couponDiscount">R$ 0,00</strong>
-    </div>
-
-    <div class="coupon">
-      <input id="couponInput" placeholder="Cupom">
-      <button onclick="applyCoupon()">Aplicar</button>
-    </div>
-
-    <div class="total-row final">
-      <span>Total</span>
-      <strong id="total">R$ 0,00</strong>
-    </div>
-
-    <button class="checkout-btn" onclick="openCheckout()">
-      Continuar
-    </button>
-
-  </div>
-
-</aside>
-
-<div id="toast" class="toast"></div>
 
 <script>
 
-/* =========================
-   DADOS
-========================= */
+const gamesData = [
 
-const gameData = {
+{
+icon:"🍎",
+name:"Blox Fruits",
+category:"Aventura • RPG",
+short:"Frutas, ilhas, espadas e progressão.",
+description:"Explore o mundo de Blox Fruits, conheça frutas, estilos de luta, espadas, raças, ilhas e sistemas de progressão."
+},
 
-  "Blox Fruits":{
-    icon:"🍎",
-    description:"Pacote relacionado ao universo de Blox Fruits, organizado para jogadores que procuram diferentes combinações e progressão.",
-    icons:["🍎","🐉","🍩","⚔️","🔥","👑","🌪️"],
-    names:[
-      "Level MAX GodHuman","Kitsune + Dough","Starter Account",
-      "Combo Raça V4","Leopard + Spirit","Dragon + Kitsune",
-      "CDK + Tushita","Buddha Farm","End Game V4","Dough + Venom",
-      "Kitsune Level Alto","Starter Pack","Mammoth + Portal",
-      "Spirit + Control","GodHuman + CDK","Dragon PvP","Leopard Build",
-      "Buddha + Portal","Control + Spirit","Dough Awakening",
-      "Kitsune Build","Venom + Blizzard","T-Rex + Mammoth",
-      "Yeti Build","Ultimate End Game"
-    ],
-    prices:[
-      12.90,18.90,24.90,29.90,34.90,39.90,44.90,49.90,54.90,59.90,
-      19.90,14.90,27.90,36.90,64.90,69.90,42.90,31.90,38.90,57.90,
-      46.90,33.90,51.90,74.90,89.90
-    ]
-  },
+{
+icon:"🏠",
+name:"Brookhaven",
+category:"Roleplay",
+short:"Casas, veículos, profissões e roleplay.",
+description:"Um universo de roleplay onde jogadores criam histórias usando casas, veículos, locais e diferentes personagens."
+},
 
-  "Brookhaven":{
-    icon:"🏠",
-    description:"Pacote para experiências e estilos de roleplay dentro do universo de Brookhaven.",
-    icons:["🏠","🚓","🏥","🚗","🏙️","👨‍👩‍👧","🏨"],
-    names:[
-      "Starter House Pack","VIP City Pack","Roleplay Starter",
-      "Family Pack","Luxury House Pack","City Explorer",
-      "Police Roleplay Pack","Hospital Roleplay Pack","School Roleplay Pack",
-      "Business Roleplay Pack","Mansion Pack","Modern House Pack",
-      "Family Life Pack","Neighborhood Pack","Pet Roleplay Pack",
-      "Car Collection Pack","Apartment Pack","Town Pack","Premium Roleplay",
-      "Emergency Pack","Celebrity House","Restaurant Pack","Hotel Pack",
-      "Mega Family Pack","Ultimate Brookhaven"
-    ],
-    prices:[
-      9.90,14.90,19.90,24.90,29.90,34.90,39.90,44.90,49.90,54.90,
-      59.90,22.90,27.90,31.90,36.90,42.90,47.90,52.90,57.90,62.90,
-      69.90,38.90,45.90,74.90,89.90
-    ]
-  },
+{
+icon:"🌲",
+name:"99 Nights in the Forest",
+category:"Sobrevivência",
+short:"Floresta, noites, recursos e exploração.",
+description:"Sobreviva às noites, explore a floresta, administre recursos e descubra formas de avançar."
+},
 
-  "99 Nights in the Forest":{
-    icon:"🌲",
-    description:"Pacote inspirado em sobrevivência, exploração, recursos e desafios da floresta.",
-    icons:["🌲","🔥","🏕️","🦌","🌙","🧭","🪓"],
-    names:[
-      "Starter Survival Pack","Forest Explorer","Night Survival",
-      "Camp Builder","Hunter Pack","Medic Pack","Explorer Pack",
-      "Fire Camp Pack","Shelter Pack","Survivor Pack","Night Watch",
-      "Forest Tools","Resource Pack","Team Survival","Hard Night Pack",
-      "Deep Forest Pack","Rescue Pack","Base Defender","Dark Forest Pack",
-      "Ultimate Survivor","Long Night Pack","Elite Survival","Forest Master",
-      "99 Night Challenge","Ultimate Forest"
-    ],
-    prices:[
-      11.90,17.90,22.90,27.90,32.90,37.90,42.90,47.90,52.90,57.90,
-      19.90,24.90,29.90,34.90,39.90,44.90,49.90,54.90,59.90,64.90,
-      69.90,74.90,79.90,84.90,94.90
-    ]
-  },
+{
+icon:"🔫",
+name:"RIVALS",
+category:"FPS • Competitivo",
+short:"Combate, armas, mapas e partidas.",
+description:"Jogo competitivo focado em partidas, armas, precisão, movimentação e diferentes mapas."
+},
 
-  "RIVALS":{
-    icon:"🔫",
-    description:"Pacote voltado para jogadores que gostam de partidas competitivas, precisão e combate.",
-    icons:["🔫","🎯","⚡","💥","🏆","🛡️","🎮"],
-    names:[
-      "Player Starter Pack","Pro Player Pack","Aim Training",
-      "Competitive Pack","Duelist Pack","Sniper Pack","Rush Pack",
-      "Defender Pack","Ranked Pack","Elite Player","Precision Pack",
-      "Arena Pack","Fast Hands Pack","Combat Pack","Advanced Player",
-      "Pro Aim Pack","Tactical Pack","Master Pack","Clutch Pack",
-      "Champion Pack","Legend Pack","Ultimate PvP","Rank Master",
-      "RIVALS Elite","RIVALS Ultimate"
-    ],
-    prices:[
-      14.90,19.90,24.90,29.90,34.90,39.90,44.90,49.90,54.90,59.90,
-      22.90,27.90,32.90,37.90,42.90,47.90,52.90,57.90,62.90,67.90,
-      72.90,79.90,84.90,94.90,99.90
-    ]
-  },
+{
+icon:"🔪",
+name:"Murder Mystery 2",
+category:"Mistério",
+short:"Detetive, xerife, assassino e coleções.",
+description:"Descubra os papéis de cada rodada e conheça sistemas, itens, coleções e estratégias gerais."
+},
 
-  "Murder Mystery 2":{
-    icon:"🔪",
-    description:"Pacote inspirado no universo de investigação, mistério, coleções e partidas de MM2.",
-    icons:["🔪","🕵️","🔫","💎","🌙","👑","🗡️"],
-    names:[
-      "Starter Pack","Collector Pack","Mystery Pack","Detective Pack",
-      "Sheriff Pack","Survivor Pack","Classic Pack","Knife Collection",
-      "Rare Collection","Epic Collection","Legend Collection",
-      "Mystery Hunter","Detective Pro","Sheriff Pro","Collector Pro",
-      "Rare Knife Pack","Premium Mystery","Dark Collection",
-      "Elite Collector","Ultimate Collector","Golden Pack","Shadow Pack",
-      "Mystery Master","MM2 Champion","Ultimate MM2"
-    ],
-    prices:[
-      14.90,19.90,24.90,29.90,34.90,39.90,44.90,49.90,54.90,59.90,
-      22.90,27.90,32.90,37.90,42.90,47.90,52.90,57.90,62.90,67.90,
-      72.90,79.90,84.90,94.90,99.90
-    ]
-  }
+{
+icon:"🌱",
+name:"Grow a Garden",
+category:"Simulação",
+short:"Jardim, sementes, plantas e evolução.",
+description:"Cultive seu jardim, conheça sementes, plantas, recursos e sistemas de evolução."
+},
 
-};
+{
+icon:"🧠",
+name:"Steal a Brainrot",
+category:"Coleção • Meme",
+short:"Brainrots, coleção, dinheiro e eventos.",
+description:"Conheça os brainrots, sistemas de coleção, economia e eventos do jogo."
+},
 
-let products=[];
-let currentGame="Todos";
-let couponApplied=false;
+{
+icon:"👗",
+name:"Dress to Impress",
+category:"Moda",
+short:"Temas, looks, passarelas e competições.",
+description:"Monte looks de acordo com temas, participe das passarelas e conheça os sistemas de moda."
+},
 
-const CART_KEY="bloxldr_cart_v14";
-const FAV_KEY="bloxldr_fav_v14";
+{
+icon:"🐾",
+name:"Adopt Me!",
+category:"Roleplay • Pets",
+short:"Pets, casas, trocas e eventos.",
+description:"Cuide de pets, personalize sua casa, explore eventos e conheça os sistemas do jogo."
+},
 
-let cart=JSON.parse(localStorage.getItem(CART_KEY) || "[]");
-let favorites=JSON.parse(localStorage.getItem(FAV_KEY) || "[]");
+{
+icon:"🚪",
+name:"DOORS",
+category:"Terror • Aventura",
+short:"Salas, entidades, itens e sobrevivência.",
+description:"Avance pelas salas, reconheça entidades, utilize itens e aprenda os principais sistemas de sobrevivência."
+},
 
-/* compatibilidade com versão anterior */
-if(!cart.length){
-  const oldCart=JSON.parse(localStorage.getItem("bloxldr_cart_v13") || "[]");
-  if(oldCart.length) cart=oldCart;
+{
+icon:"⚔️",
+name:"The Strongest Battlegrounds",
+category:"Combate",
+short:"Personagens, habilidades e batalhas.",
+description:"Conheça personagens, habilidades, combos, arenas e fundamentos do combate."
+},
+
+{
+icon:"🛏️",
+name:"BedWars",
+category:"PvP • Estratégia",
+short:"Bases, recursos, kits e combate.",
+description:"Construa sua base, colete recursos, escolha kits e enfrente outros jogadores."
 }
 
-if(!favorites.length){
-  const oldFav=JSON.parse(localStorage.getItem("bloxldr_fav_v13") || "[]");
-  if(oldFav.length) favorites=oldFav;
-}
+];
 
-/* =========================
-   GERAR PRODUTOS
-========================= */
 
-let id=1;
+let currentFilter="Todos";
+let currentSearch="";
 
-for(const game in gameData){
-
-  const data=gameData[game];
-
-  data.names.forEach((name,i)=>{
-
-    products.push({
-      id:id++,
-      game,
-      name,
-      price:data.prices[i],
-      icon:data.icons[i % data.icons.length],
-      description:data.description,
-
-      /* estoque estável para não mudar ao atualizar */
-      stock:4 + ((i * 7 + game.length) % 17),
-
-      /* etiquetas visuais */
-      tag:
-        i===0 ? "Destaque" :
-        i===1 ? "Premium" :
-        i===24 ? "Ultimate" :
-        "Catálogo"
-    });
-
-  });
-}
-
-/* =========================
-   UTILIDADES
-========================= */
-
-function money(value){
-  return value.toLocaleString("pt-BR",{
-    style:"currency",
-    currency:"BRL"
-  });
-}
-
-function save(){
-  localStorage.setItem(CART_KEY,JSON.stringify(cart));
-  localStorage.setItem(FAV_KEY,JSON.stringify(favorites));
-}
-
-function toast(message){
-  const el=document.getElementById("toast");
-  el.textContent=message;
-  el.classList.add("show");
-
-  clearTimeout(window.toastTimer);
-
-  window.toastTimer=setTimeout(()=>{
-    el.classList.remove("show");
-  },2200);
-}
-
-function getProduct(productId){
-  return products.find(p=>p.id===Number(productId));
-}
-
-/* =========================
-   NAVEGAÇÃO
-========================= */
-
-function showPage(page){
-
-  const pages=["home","games","catalog","favorites","account"];
-
-  pages.forEach(p=>{
-    const el=document.getElementById("page-"+p);
-    if(el) el.style.display=p===page ? "block" : "none";
-  });
-
-  document.querySelectorAll(".navlinks button").forEach(btn=>{
-    btn.classList.toggle(
-      "active",
-      btn.dataset.page===page
-    );
-  });
-
-  if(page==="games") renderGames();
-  if(page==="catalog"){
-    renderChips();
-    renderCatalog();
-  }
-  if(page==="favorites") renderFavorites();
-  if(page==="account") renderAccount();
-
-  window.scrollTo({top:0,behavior:"smooth"});
-}
-
-/* =========================
-   JOGOS
-========================= */
-
-function gameCard(game){
-
-  const data=gameData[game];
-  const count=products.filter(p=>p.game===game).length;
-
-  return `
-    <div class="game-card" onclick="openGame('${game.replace(/'/g,"\\'")}')">
-
-      <div class="game-icon">${data.icon}</div>
-
-      <h3>${game}</h3>
-
-      <p>${data.description}</p>
-
-      <small>${count} produtos →</small>
-
-    </div>
-  `;
-}
 
 function renderGames(){
 
-  const html=Object.keys(gameData)
-    .map(gameCard)
-    .join("");
+const container=document.getElementById("games");
 
-  document.getElementById("gamesGrid").innerHTML=html;
-  document.getElementById("homeGames").innerHTML=html;
+container.innerHTML=gamesData.map((game,index)=>`
+
+<article
+class="game"
+onclick="openGame(${index})"
+>
+
+<div class="game-icon">
+${game.icon}
+</div>
+
+<h3>
+${game.name}
+</h3>
+
+<p>
+${game.short}
+</p>
+
+<span class="tag">
+${game.category}
+</span>
+
+</article>
+
+`).join("");
+
 }
 
-function openGame(game){
 
-  currentGame=game;
+function createArticles(){
 
-  showPage("catalog");
+let articles=[];
 
-  setTimeout(()=>{
-    renderChips();
-    renderCatalog();
-  },50);
+gamesData.forEach((game,index)=>{
+
+articles.push({
+
+type:"Guias",
+
+icon:"📖",
+
+title:`Guia para começar — ${game.name}`,
+
+description:
+`Primeiros passos, sistemas básicos e informações importantes sobre ${game.name}.`,
+
+game:index
+
+});
+
+articles.push({
+
+type:"Sistemas",
+
+icon:"⚙️",
+
+title:`Sistemas de ${game.name}`,
+
+description:
+`Entenda os principais sistemas e recursos encontrados no jogo.`,
+
+game:index
+
+});
+
+articles.push({
+
+type:"Mapas",
+
+icon:"🗺️",
+
+title:`Mapa e locais — ${game.name}`,
+
+description:
+`Conheça áreas e locais importantes do universo de ${game.name}.`,
+
+game:index
+
+});
+
+});
+
+return articles;
+
 }
 
-/* =========================
-   FAVORITOS
-========================= */
 
-function isFavorite(id){
-  return favorites.includes(Number(id));
+function renderArticles(){
+
+let articles=createArticles();
+
+if(currentFilter!=="Todos"){
+
+articles=articles.filter(
+article=>article.type===currentFilter
+);
+
 }
 
-function toggleFavorite(id){
+if(currentSearch){
 
-  id=Number(id);
+articles=articles.filter(article=>{
 
-  if(isFavorite(id)){
-    favorites=favorites.filter(x=>x!==id);
-    toast("Removido dos favoritos");
-  }else{
-    favorites.push(id);
-    toast("Adicionado aos favoritos");
-  }
+const text=
+article.title+
+article.description+
+gamesData[article.game].name;
 
-  save();
-  updateBadges();
+return text
+.toLowerCase()
+.includes(currentSearch.toLowerCase());
 
-  renderCatalog();
-  renderFavorites();
+});
+
 }
 
-/* =========================
-   PRODUTO CARD
-========================= */
+const container=document.getElementById("articles");
 
-function productCard(p){
+if(articles.length===0){
 
-  const fav=isFavorite(p.id);
+container.innerHTML=`
+<div class="article">
+<h3>Nenhum resultado encontrado.</h3>
+<p>
+Tente pesquisar outro nome ou assunto.
+</p>
+</div>
+`;
 
-  return `
-    <article class="product-card">
+return;
 
-      <div class="product-visual">
-
-        <span class="product-tag">${p.tag}</span>
-
-        <button
-          class="fav ${fav ? "active" : ""}"
-          onclick="event.stopPropagation();toggleFavorite(${p.id})"
-          title="Favoritar"
-        >
-          ${fav ? "♥" : "♡"}
-        </button>
-
-        <span>${p.icon}</span>
-
-      </div>
-
-      <div class="product-info">
-
-        <div class="product-game">${p.game}</div>
-
-        <div class="product-name">${p.name}</div>
-
-        <div class="product-bottom">
-
-          <div>
-            <div class="price">${money(p.price)}</div>
-            <div class="stock">● ${p.stock} disponíveis</div>
-          </div>
-
-          <button
-            class="add-btn"
-            onclick="event.stopPropagation();addCart(${p.id})"
-          >
-            + Carrinho
-          </button>
-
-        </div>
-
-      </div>
-
-    </article>
-  `;
 }
 
-/* =========================
-   DESTAQUES
-========================= */
+container.innerHTML=articles.map(article=>`
 
-function renderFeatured(){
+<div class="article">
 
-  const featured=products
-    .filter(p=>p.price>=24.90)
-    .slice(0,8);
+<div class="article-icon">
+${article.icon}
+</div>
 
-  document.getElementById("homeGames");
+<span class="tag">
+${article.type}
+</span>
 
-  /* reservado para futuras expansões */
+<h3>
+${article.title}
+</h3>
+
+<p>
+${article.description}
+</p>
+
+<button
+onclick="openGame(${article.game})">
+Abrir página →
+</button>
+
+</div>
+
+`).join("");
+
 }
 
-/* =========================
-   CATEGORIAS
-========================= */
 
-function renderChips(){
+function setFilter(filter,button){
 
-  const chips=[
-    "Todos",
-    ...Object.keys(gameData)
-  ];
+currentFilter=filter;
 
-  document.getElementById("chips").innerHTML=chips.map(game=>`
-    <button
-      class="chip ${currentGame===game ? "active" : ""}"
-      onclick="setCategory('${game.replace(/'/g,"\\'")}')"
-    >
-      ${game}
-    </button>
-  `).join("");
+document
+.querySelectorAll(".chip")
+.forEach(chip=>{
+chip.classList.remove("active");
+});
+
+button.classList.add("active");
+
+renderArticles();
+
 }
 
-function setCategory(game){
 
-  currentGame=game;
+function filterContent(value){
 
-  showPage("catalog");
+currentSearch=value;
 
-  document.getElementById("searchInput").value="";
+renderArticles();
 
-  renderChips();
-  renderCatalog();
 }
 
-/* =========================
-   CATÁLOGO
-========================= */
 
-function renderCatalog(){
+function globalSearch(value){
 
-  const query=(document.getElementById("searchInput")?.value || "")
-    .toLowerCase()
-    .trim();
-
-  const sort=document.getElementById("sortSelect")?.value || "featured";
-
-  let list=products.filter(p=>{
-
-    const gameMatch=
-      currentGame==="Todos" ||
-      p.game===currentGame;
-
-    const textMatch=
-      p.name.toLowerCase().includes(query) ||
-      p.game.toLowerCase().includes(query);
-
-    return gameMatch && textMatch;
-  });
-
-  if(sort==="low"){
-    list.sort((a,b)=>a.price-b.price);
-  }
-
-  if(sort==="high"){
-    list.sort((a,b)=>b.price-a.price);
-  }
-
-  if(sort==="az"){
-    list.sort((a,b)=>a.name.localeCompare(b.name));
-  }
-
-  if(sort==="za"){
-    list.sort((a,b)=>b.name.localeCompare(a.name));
-  }
-
-  const count=document.getElementById("resultsCount");
-
-  count.textContent=
-    `${list.length} produto${list.length===1 ? "" : "s"} encontrado${list.length===1 ? "" : "s"}`;
-
-  const grid=document.getElementById("catalogGrid");
-
-  if(!list.length){
-
-    grid.innerHTML=`
-      <div class="empty" style="grid-column:1/-1">
-        <strong>Nenhum produto encontrado</strong>
-        Tente pesquisar outro termo ou mudar a categoria.
-      </div>
-    `;
-
-    return;
-  }
-
-  grid.innerHTML=list.map(productCard).join("");
+if(!value){
+return;
 }
 
-/* =========================
-   FAVORITOS PAGE
-========================= */
+document
+.getElementById("contentSearch")
+.value=value;
 
-function renderFavorites(){
+document
+.getElementById("guias")
+.scrollIntoView({
+behavior:"smooth"
+});
 
-  const grid=document.getElementById("favoritesGrid");
+currentSearch=value;
 
-  const list=products.filter(p=>favorites.includes(p.id));
+renderArticles();
 
-  if(!list.length){
-
-    grid.innerHTML=`
-      <div class="empty" style="grid-column:1/-1">
-        <strong>Você ainda não tem favoritos</strong>
-        Clique no ♡ de um produto para guardá-lo aqui.
-      </div>
-    `;
-
-    return;
-  }
-
-  grid.innerHTML=list.map(productCard).join("");
 }
 
-/* =========================
-   PRODUTO DETALHE
-========================= */
 
-function openProduct(id){
+function openGame(index){
 
-  const p=getProduct(id);
+const game=gamesData[index];
 
-  if(!p)return;
+document
+.getElementById("modalCategory")
+.textContent=game.category;
 
-  document.getElementById("productModalContent").innerHTML=`
+document
+.getElementById("modalTitle")
+.textContent=
+game.icon+" "+game.name;
 
-    <div class="product-detail">
+document
+.getElementById("modalDescription")
+.textContent=
+game.description;
 
-      <div class="detail-visual">
-        ${p.icon}
-      </div>
+document
+.getElementById("modalInfo")
+.innerHTML=`
 
-      <div>
+<div class="info">
+<strong>Categoria</strong>
+<span>${game.category}</span>
+</div>
 
-        <div class="detail-game">${p.game}</div>
+<div class="info">
+<strong>Conteúdo</strong>
+<span>Guias e informações</span>
+</div>
 
-        <h2 class="detail-title">${p.name}</h2>
+<div class="info">
+<strong>Wiki</strong>
+<span>BloxLdr</span>
+</div>
 
-        <p class="detail-description">
-          ${p.description}
-        </p>
+<div class="info">
+<strong>Status</strong>
+<span>Conteúdo em expansão</span>
+</div>
 
-        <div class="detail-price">${money(p.price)}</div>
+`;
 
-        <div style="color:#5ee6ae;font-size:11px;margin-bottom:18px">
-          ● ${p.stock} disponíveis no catálogo
-        </div>
+document
+.getElementById("modalGuides")
+.innerHTML=`
 
-        <button
-          class="primary"
-          onclick="addCart(${p.id});closeModal()"
-        >
-          Adicionar ao carrinho
-        </button>
+<div class="guide">
+📖 Guia para iniciantes
+</div>
 
-        <button
-          class="secondary"
-          style="margin-left:7px"
-          onclick="toggleFavorite(${p.id})"
-        >
-          ${isFavorite(p.id) ? "♥ Favoritado" : "♡ Favoritar"}
-        </button>
+<div class="guide">
+⚙️ Sistemas principais
+</div>
 
-      </div>
+<div class="guide">
+🎒 Itens e recursos
+</div>
 
-    </div>
-  `;
+<div class="guide">
+🗺️ Mapas e locais
+</div>
 
-  document.getElementById("productOverlay").classList.add("open");
+<div class="guide">
+💡 Dicas importantes
+</div>
+
+<div class="guide">
+❓ Perguntas frequentes
+</div>
+
+`;
+
+document
+.getElementById("modal")
+.classList.add("show");
+
+document.body.style.overflow="hidden";
+
 }
+
 
 function closeModal(){
-  document.getElementById("productOverlay").classList.remove("open");
+
+document
+.getElementById("modal")
+.classList.remove("show");
+
+document.body.style.overflow="";
+
 }
 
-function overlayClose(event,id){
 
-  if(event.target.id===id){
-    document.getElementById(id).classList.remove("open");
-  }
+function outsideModal(event){
+
+if(event.target.id==="modal"){
+closeModal();
 }
 
-/* =========================
-   CARRINHO
-========================= */
-
-function addCart(id){
-
-  id=Number(id);
-
-  const item=cart.find(x=>x.id===id);
-
-  if(item){
-    item.qty++;
-  }else{
-    cart.push({
-      id,
-      qty:1
-    });
-  }
-
-  save();
-  updateBadges();
-  renderCart();
-
-  toast("Produto adicionado ao carrinho");
 }
 
-function changeQty(id,delta){
 
-  const item=cart.find(x=>x.id===Number(id));
+function home(){
 
-  if(!item)return;
-
-  item.qty+=delta;
-
-  if(item.qty<=0){
-    cart=cart.filter(x=>x.id!==Number(id));
-  }
-
-  save();
-  renderCart();
-  updateBadges();
-}
-
-function removeCart(id){
-
-  cart=cart.filter(x=>x.id!==Number(id));
-
-  save();
-  renderCart();
-  updateBadges();
-
-  toast("Produto removido");
-}
-
-function openCart(){
-
-  renderCart();
-
-  document.getElementById("cartDrawer").classList.add("open");
-}
-
-function closeCart(){
-  document.getElementById("cartDrawer").classList.remove("open");
-}
-
-/* =========================
-   TOTAIS
-========================= */
-
-function calculateTotals(){
-
-  let subtotal=0;
-
-  cart.forEach(item=>{
-    const p=getProduct(item.id);
-
-    if(p){
-      subtotal+=p.price*item.qty;
-    }
-  });
-
-  const automatic=
-    subtotal>24 ? subtotal*.02 : 0;
-
-  const afterAutomatic=
-    subtotal-automatic;
-
-  const coupon=
-    couponApplied
-      ? afterAutomatic*.05
-      : 0;
-
-  const total=
-    Math.max(0,afterAutomatic-coupon);
-
-  return {
-    subtotal,
-    automatic,
-    coupon,
-    total
-  };
-}
-
-/* =========================
-   RENDER CARRINHO
-========================= */
-
-function renderCart(){
-
-  const container=document.getElementById("cartItems");
-
-  if(!cart.length){
-
-    container.innerHTML=`
-      <div class="empty" style="padding:60px 15px;border:0">
-        <strong>Seu carrinho está vazio</strong>
-        Adicione alguns produtos para começar.
-      </div>
-    `;
-
-  }else{
-
-    container.innerHTML=cart.map(item=>{
-
-      const p=getProduct(item.id);
-
-      if(!p)return "";
-
-      return `
-        <div class="cart-item">
-
-          <div class="cart-item-icon">${p.icon}</div>
-
-          <div>
-
-            <h4>${p.name}</h4>
-
-            <small>${p.game}</small>
-
-            <div class="qty">
-              <button onclick="changeQty(${p.id},-1)">−</button>
-              <span>${item.qty}</span>
-              <button onclick="changeQty(${p.id},1)">+</button>
-            </div>
-
-          </div>
-
-          <div class="cart-item-price">
-
-            ${money(p.price*item.qty)}
-
-            <button
-              class="remove"
-              onclick="removeCart(${p.id})"
-            >
-              remover
-            </button>
-
-          </div>
-
-        </div>
-      `;
-
-    }).join("");
-
-  }
-
-  const totals=calculateTotals();
-
-  document.getElementById("subtotal").textContent=money(totals.subtotal);
-  document.getElementById("autoDiscount").textContent=
-    totals.automatic ? "- "+money(totals.automatic) : money(0);
-
-  document.getElementById("couponDiscount").textContent=
-    totals.coupon ? "- "+money(totals.coupon) : money(0);
-
-  document.getElementById("total").textContent=money(totals.total);
-}
-
-/* =========================
-   CUPOM
-========================= */
-
-function applyCoupon(){
-
-  const input=document
-    .getElementById("couponInput")
-    .value
-    .trim()
-    .toUpperCase();
-
-  if(input==="BLOXLDR"){
-
-    couponApplied=true;
-
-    toast("Cupom BLOXLDR aplicado");
-
-  }else{
-
-    couponApplied=false;
-
-    if(input){
-      toast("Cupom não reconhecido");
-    }
-
-  }
-
-  renderCart();
-}
-
-/* =========================
-   CHECKOUT
-========================= */
-
-function openCheckout(){
-
-  if(!cart.length){
-
-    toast("Seu carrinho está vazio");
-    return;
-  }
-
-  document
-    .getElementById("checkoutOverlay")
-    .classList.add("open");
-}
-
-function closeCheckout(){
-
-  document
-    .getElementById("checkoutOverlay")
-    .classList.remove("open");
-}
-
-function finishCheckout(){
-
-  const name=document
-    .getElementById("checkoutName")
-    .value
-    .trim();
-
-  const email=document
-    .getElementById("checkoutEmail")
-    .value
-    .trim();
-
-  if(!name || !email){
-
-    toast("Preencha nome e e-mail");
-    return;
-  }
-
-  cart=[];
-
-  couponApplied=false;
-
-  document.getElementById("couponInput").value="";
-  document.getElementById("checkoutName").value="";
-  document.getElementById("checkoutEmail").value="";
-
-  save();
-  updateBadges();
-  renderCart();
-
-  closeCheckout();
-  closeCart();
-
-  toast("Pedido registrado com sucesso.");
-}
-
-/* =========================
-   CONTADORES
-========================= */
-
-function updateBadges(){
-
-  const totalItems=
-    cart.reduce((sum,item)=>sum+item.qty,0);
-
-  document.getElementById("cartBadge").textContent=totalItems;
-
-  document.getElementById("favCountNav").textContent=
-    favorites.length ? `(${favorites.length})` : "";
-
-  const accountFav=document.getElementById("accountFav");
-  const accountCart=document.getElementById("accountCart");
-
-  if(accountFav)
-    accountFav.textContent=favorites.length;
-
-  if(accountCart)
-    accountCart.textContent=totalItems;
-}
-
-function renderAccount(){
-  updateBadges();
-}
-
-/* =========================
-   ABRIR PRODUTO AO CLICAR
-========================= */
-
-document.addEventListener("click",function(event){
-
-  const card=event.target.closest(".product-card");
-
-  if(!card)return;
-
-  if(
-    event.target.closest("button") ||
-    event.target.closest("input")
-  )return;
-
-  const cards=[
-    ...document.querySelectorAll(".product-card")
-  ];
-
-  const index=cards.indexOf(card);
-
-  const visibleProducts=
-    [...products].filter(p=>{
-
-      const page=document.getElementById("page-catalog");
-
-      if(page.style.display==="none")return true;
-
-      const query=
-        document.getElementById("searchInput")?.value
-        .toLowerCase()
-        .trim() || "";
-
-      const gameMatch=
-        currentGame==="Todos" ||
-        p.game===currentGame;
-
-      const textMatch=
-        p.name.toLowerCase().includes(query) ||
-        p.game.toLowerCase().includes(query);
-
-      return gameMatch && textMatch;
-
-    });
-
-  if(index>=0 && visibleProducts[index]){
-    openProduct(visibleProducts[index].id);
-  }
-
+window.scrollTo({
+top:0,
+behavior:"smooth"
 });
 
-/* =========================
-   ESC
-========================= */
+}
 
-document.addEventListener("keydown",function(e){
-
-  if(e.key!=="Escape")return;
-
-  closeModal();
-  closeCheckout();
-  closeCart();
-
-});
-
-/* =========================
-   INICIALIZAÇÃO
-========================= */
 
 renderGames();
-renderChips();
-renderCatalog();
-renderFavorites();
-renderCart();
-updateBadges();
 
-showPage("home");
+renderArticles();
 
 </script>
 
