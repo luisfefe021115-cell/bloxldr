@@ -3,562 +3,497 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>BloxLdr — Wiki Roblox</title>
-
-<meta name="description"
-content="BloxLdr — Wiki de jogos Roblox com guias, informações, mapas, sistemas e novidades.">
 
 <style>
 :root{
-  --bg:#07090d;
-  --bg2:#0b0f16;
-  --card:#101620;
-  --card2:#131a25;
-  --line:#222c3a;
-  --text:#f5f7fb;
-  --muted:#929eae;
-  --purple:#6c63ff;
-  --purple2:#918aff;
-  --green:#39d98a;
+ --bg:#07090d;
+ --panel:#0d121a;
+ --panel2:#111823;
+ --line:#202a38;
+ --text:#f5f7fb;
+ --muted:#929dad;
+ --purple:#6c63ff;
+ --purple2:#948cff;
+ --green:#35d58a;
 }
 
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
-html{
-  scroll-behavior:smooth;
-}
+*{box-sizing:border-box;margin:0;padding:0}
 
 body{
-  background:
-    radial-gradient(circle at 75% -10%,#211c55 0,#07090d 35%),
-    var(--bg);
-  color:var(--text);
-  font-family:Arial,Helvetica,sans-serif;
-  line-height:1.5;
+ background:
+ radial-gradient(circle at 75% -10%,#211d55 0,#07090d 38%),
+ var(--bg);
+ color:var(--text);
+ font-family:Arial,Helvetica,sans-serif;
+ line-height:1.6;
 }
 
-button,
-input{
-  font:inherit;
-}
-
-button{
-  cursor:pointer;
-}
-
-a{
-  color:inherit;
-  text-decoration:none;
-}
-
-/* TOPO */
+button,input{font:inherit}
+button{cursor:pointer}
+a{text-decoration:none;color:inherit}
 
 .topbar{
-  text-align:center;
-  padding:9px 15px;
-  background:#090c12;
-  border-bottom:1px solid var(--line);
-  color:#aeb7c5;
-  font-size:13px;
+ padding:9px;
+ text-align:center;
+ background:#090c12;
+ border-bottom:1px solid var(--line);
+ color:#aeb7c5;
+ font-size:13px;
 }
 
 header{
-  position:sticky;
-  top:0;
-  z-index:20;
-  background:rgba(7,9,13,.92);
-  backdrop-filter:blur(15px);
-  border-bottom:1px solid var(--line);
+ position:sticky;
+ top:0;
+ z-index:20;
+ background:rgba(7,9,13,.94);
+ backdrop-filter:blur(15px);
+ border-bottom:1px solid var(--line);
 }
 
 .nav{
-  max-width:1200px;
-  margin:auto;
-  min-height:70px;
-  padding:10px 20px;
-  display:flex;
-  align-items:center;
-  gap:30px;
+ max-width:1200px;
+ margin:auto;
+ min-height:70px;
+ padding:10px 20px;
+ display:flex;
+ align-items:center;
+ gap:28px;
 }
 
 .logo{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-weight:900;
-  font-size:21px;
+ display:flex;
+ align-items:center;
+ gap:10px;
+ font-size:21px;
+ font-weight:900;
 }
 
-.logo-icon{
-  width:36px;
-  height:36px;
-  border-radius:10px;
-  display:grid;
-  place-items:center;
-  background:linear-gradient(135deg,var(--purple),#4941d0);
-  box-shadow:0 8px 25px #6c63ff30;
+.logoIcon{
+ width:36px;
+ height:36px;
+ border-radius:10px;
+ display:grid;
+ place-items:center;
+ background:linear-gradient(135deg,var(--purple),#4941d0);
 }
 
-.logo-icon::after{
-  content:"B";
-  font-weight:900;
-  font-size:20px;
+.logoIcon:after{
+ content:"B";
+ font-weight:900;
 }
 
 .navlinks{
-  display:flex;
-  gap:20px;
-  color:#aab4c3;
-  font-size:14px;
+ display:flex;
+ gap:20px;
+ color:#aab4c3;
+ font-size:14px;
 }
 
-.navlinks a:hover{
-  color:white;
-}
+.navlinks a:hover{color:white}
 
 .search{
-  margin-left:auto;
-  position:relative;
+ margin-left:auto;
+ position:relative;
 }
 
 .search input{
-  width:250px;
-  padding:11px 13px 11px 38px;
-  border:1px solid var(--line);
-  border-radius:12px;
-  background:#0d131c;
-  color:white;
-  outline:none;
+ width:250px;
+ padding:11px 14px 11px 38px;
+ border:1px solid var(--line);
+ border-radius:12px;
+ background:#0d131c;
+ color:white;
+ outline:none;
 }
 
 .search span{
-  position:absolute;
-  left:13px;
-  top:8px;
-  color:#8b96a6;
+ position:absolute;
+ left:13px;
+ top:7px;
+ color:#8994a5;
 }
-
-/* HERO */
 
 .hero{
-  max-width:1200px;
-  margin:auto;
-  padding:80px 20px 55px;
+ max-width:1200px;
+ margin:auto;
+ padding:78px 20px 50px;
 }
 
-.hero-grid{
-  display:grid;
-  grid-template-columns:1.3fr .7fr;
-  gap:25px;
+.heroGrid{
+ display:grid;
+ grid-template-columns:1.3fr .7fr;
+ gap:25px;
 }
 
 .eyebrow{
-  color:var(--purple2);
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  margin-bottom:12px;
+ color:var(--purple2);
+ font-size:12px;
+ font-weight:800;
+ letter-spacing:.12em;
+ text-transform:uppercase;
+ margin-bottom:12px;
 }
 
 .hero h1{
-  font-size:clamp(45px,6vw,75px);
-  line-height:.98;
-  letter-spacing:-.05em;
-  margin-bottom:20px;
+ font-size:clamp(45px,6vw,74px);
+ line-height:.98;
+ letter-spacing:-.05em;
+ margin-bottom:20px;
 }
 
-.hero h1 span{
-  color:var(--purple2);
-}
+.hero h1 span{color:var(--purple2)}
 
 .hero p{
-  max-width:680px;
-  color:#aeb8c7;
-  font-size:17px;
+ max-width:670px;
+ color:#aeb8c7;
+ font-size:17px;
 }
 
 .buttons{
-  display:flex;
-  gap:12px;
-  margin-top:28px;
-  flex-wrap:wrap;
+ display:flex;
+ gap:12px;
+ margin-top:28px;
 }
 
 .btn{
-  border:1px solid var(--line);
-  background:#111722;
-  color:white;
-  padding:12px 18px;
-  border-radius:12px;
-  font-weight:700;
+ border:1px solid var(--line);
+ background:#111722;
+ color:white;
+ padding:12px 18px;
+ border-radius:12px;
+ font-weight:700;
 }
 
 .btn.primary{
-  background:var(--purple);
-  border-color:var(--purple);
+ background:var(--purple);
+ border-color:var(--purple);
 }
 
-.btn:hover{
-  transform:translateY(-2px);
+.heroCard{
+ background:linear-gradient(145deg,#121827,#0b1017);
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:25px;
 }
 
-.hero-card{
-  background:linear-gradient(145deg,#121827,#0b1017);
-  border:1px solid var(--line);
-  border-radius:22px;
-  padding:25px;
+.heroCard h2{
+ font-size:27px;
 }
 
-.hero-card h2{
-  font-size:27px;
-}
-
-.hero-card p{
-  font-size:14px;
-  margin-top:8px;
+.heroCard p{
+ font-size:14px;
+ margin-top:8px;
 }
 
 .stats{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:10px;
-  margin-top:22px;
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:10px;
+ margin-top:22px;
 }
 
 .stat{
-  background:#0b1018;
-  border:1px solid var(--line);
-  border-radius:13px;
-  padding:14px;
+ background:#0b1018;
+ border:1px solid var(--line);
+ border-radius:13px;
+ padding:14px;
 }
 
 .stat strong{
-  display:block;
-  font-size:23px;
+ display:block;
+ font-size:23px;
 }
 
-.stat small{
-  color:var(--muted);
-}
-
-/* SECTIONS */
+.stat small{color:var(--muted)}
 
 .section{
-  max-width:1200px;
-  margin:auto;
-  padding:35px 20px;
+ max-width:1200px;
+ margin:auto;
+ padding:35px 20px;
 }
 
-.section-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:end;
-  margin-bottom:20px;
+.sectionHead{
+ margin-bottom:20px;
 }
 
-.section-head h2{
-  font-size:29px;
-  letter-spacing:-.03em;
+.sectionHead h2{
+ font-size:29px;
 }
 
-.section-head p{
-  color:var(--muted);
-  font-size:14px;
+.sectionHead p{
+ color:var(--muted);
+ font-size:14px;
 }
-
-/* JOGOS */
 
 .games{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:14px;
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:14px;
 }
 
 .game{
-  background:linear-gradient(145deg,#101620,#0c1118);
-  border:1px solid var(--line);
-  border-radius:17px;
-  padding:19px;
-  transition:.18s;
+ background:linear-gradient(145deg,#101620,#0c1118);
+ border:1px solid var(--line);
+ border-radius:17px;
+ padding:19px;
+ transition:.18s;
 }
 
 .game:hover{
-  transform:translateY(-4px);
-  border-color:#414b60;
+ transform:translateY(-4px);
+ border-color:#424d61;
 }
 
-.game-icon{
-  font-size:34px;
-  margin-bottom:20px;
+.gameIcon{
+ font-size:34px;
+ margin-bottom:20px;
 }
 
 .game h3{
-  font-size:17px;
-  margin-bottom:6px;
+ font-size:17px;
+ margin-bottom:5px;
 }
 
 .game p{
-  color:var(--muted);
-  font-size:12px;
-  min-height:38px;
+ color:var(--muted);
+ font-size:12px;
+ min-height:38px;
 }
 
 .tag{
-  display:inline-block;
-  margin-top:14px;
-  padding:5px 8px;
-  border-radius:999px;
-  background:#6c63ff18;
-  border:1px solid #6c63ff42;
-  color:#b9b4ff;
-  font-size:10px;
+ display:inline-block;
+ margin-top:13px;
+ padding:5px 8px;
+ border-radius:999px;
+ background:#6c63ff18;
+ border:1px solid #6c63ff40;
+ color:#bdb8ff;
+ font-size:10px;
 }
 
-/* BUSCA */
+/* PÁGINA DO JOGO */
 
-.search-box{
-  display:flex;
-  margin-bottom:16px;
+.gamePage{
+ display:none;
+ max-width:1200px;
+ margin:auto;
+ padding:55px 20px;
 }
 
-.search-box input{
-  width:100%;
-  padding:14px;
-  background:#0c1118;
-  border:1px solid var(--line);
-  border-radius:13px;
-  color:white;
-  outline:none;
+.back{
+ border:1px solid var(--line);
+ background:#101620;
+ color:#aeb7c5;
+ padding:9px 13px;
+ border-radius:10px;
+ margin-bottom:25px;
 }
 
-.filters{
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
-  margin-bottom:18px;
+.gameHero{
+ background:linear-gradient(145deg,#111827,#0b1017);
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:30px;
+ margin-bottom:20px;
 }
 
-.chip{
-  border:1px solid var(--line);
-  background:#0d131c;
-  color:#9da8b7;
-  padding:9px 13px;
-  border-radius:999px;
-  font-size:12px;
+.gameTitle{
+ display:flex;
+ gap:20px;
+ align-items:center;
 }
 
-.chip.active,
-.chip:hover{
-  background:#6c63ff18;
-  color:#dcd9ff;
-  border-color:#6c63ff55;
+.bigIcon{
+ font-size:55px;
+}
+
+.gameTitle h1{
+ font-size:38px;
+}
+
+.gameTitle p{
+ color:var(--muted);
+}
+
+.wikiGrid{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:14px;
+}
+
+.wikiCard{
+ background:#0d121a;
+ border:1px solid var(--line);
+ border-radius:16px;
+ padding:20px;
+ transition:.18s;
+}
+
+.wikiCard:hover{
+ transform:translateY(-3px);
+ border-color:#454f64;
+}
+
+.wikiCard .icon{
+ font-size:28px;
+ margin-bottom:10px;
+}
+
+.wikiCard h3{
+ font-size:16px;
+ margin-bottom:7px;
+}
+
+.wikiCard p{
+ color:var(--muted);
+ font-size:13px;
+}
+
+.wikiCard button{
+ margin-top:15px;
+ background:none;
+ border:0;
+ color:#a39cff;
+ font-weight:700;
+}
+
+/* ARTIGO */
+
+.articlePage{
+ display:none;
+ max-width:950px;
+ margin:auto;
+ padding:50px 20px;
+}
+
+.articleBox{
+ background:#0d121a;
+ border:1px solid var(--line);
+ border-radius:20px;
+ padding:30px;
+}
+
+.articleTop{
+ display:flex;
+ justify-content:space-between;
+ gap:20px;
+}
+
+.articleBox h1{
+ font-size:36px;
+ line-height:1.15;
+ margin:8px 0 15px;
+}
+
+.articleBox .lead{
+ color:#adb7c6;
+ font-size:16px;
+ margin-bottom:28px;
+}
+
+.articleContent h2{
+ font-size:22px;
+ margin:28px 0 9px;
+}
+
+.articleContent h3{
+ font-size:17px;
+ margin:20px 0 6px;
+}
+
+.articleContent p{
+ color:#b2bbc9;
+ margin-bottom:12px;
+}
+
+.articleContent ul{
+ padding-left:23px;
+ color:#b2bbc9;
+}
+
+.articleContent li{
+ margin:7px 0;
+}
+
+.note{
+ background:#111827;
+ border-left:3px solid var(--purple);
+ padding:15px;
+ border-radius:10px;
+ margin:18px 0;
+ color:#c3c9d4;
+}
+
+.closeBtn{
+ border:1px solid var(--line);
+ background:#171d27;
+ color:white;
+ border-radius:10px;
+ width:40px;
+ height:40px;
 }
 
 /* GUIAS */
 
 .articles{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:14px;
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:14px;
 }
 
-.article{
-  background:#0d121a;
-  border:1px solid var(--line);
-  border-radius:16px;
-  padding:19px;
+.articleCard{
+ background:#0d121a;
+ border:1px solid var(--line);
+ border-radius:16px;
+ padding:19px;
 }
 
-.article-icon{
-  font-size:27px;
-  margin-bottom:12px;
+.articleCard .mini{
+ font-size:28px;
 }
 
-.article h3{
-  font-size:16px;
-  margin:8px 0;
+.articleCard h3{
+ margin:8px 0;
 }
 
-.article p{
-  color:var(--muted);
-  font-size:13px;
+.articleCard p{
+ color:var(--muted);
+ font-size:13px;
 }
 
-.article button{
-  margin-top:15px;
-  border:0;
-  background:none;
-  color:#9d96ff;
-  font-weight:700;
+.articleCard button{
+ margin-top:13px;
+ background:none;
+ border:0;
+ color:#a39cff;
+ font-weight:700;
 }
-
-/* MODAL */
-
-.modal-bg{
-  position:fixed;
-  inset:0;
-  z-index:50;
-  background:#000b;
-  display:none;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-}
-
-.modal-bg.show{
-  display:flex;
-}
-
-.modal{
-  width:min(760px,100%);
-  max-height:88vh;
-  overflow:auto;
-  background:#0d121a;
-  border:1px solid #293242;
-  border-radius:22px;
-  padding:25px;
-  box-shadow:0 25px 80px #000;
-}
-
-.modal-top{
-  display:flex;
-  justify-content:space-between;
-  gap:15px;
-}
-
-.close{
-  width:38px;
-  height:38px;
-  border:0;
-  border-radius:10px;
-  background:#171d27;
-  color:white;
-}
-
-.modal h2{
-  font-size:30px;
-  margin:6px 0 10px;
-}
-
-.modal-description{
-  color:#aeb8c7;
-  margin-bottom:20px;
-}
-
-.info-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:10px;
-}
-
-.info{
-  background:#101620;
-  border:1px solid var(--line);
-  border-radius:13px;
-  padding:14px;
-}
-
-.info strong{
-  display:block;
-  margin-bottom:3px;
-}
-
-.info span{
-  color:var(--muted);
-  font-size:12px;
-}
-
-.guide-list{
-  display:grid;
-  gap:9px;
-  margin-top:20px;
-}
-
-.guide{
-  background:#101620;
-  border:1px solid var(--line);
-  border-radius:12px;
-  padding:13px;
-  color:#cbd2dd;
-}
-
-/* FOOTER */
 
 footer{
-  margin-top:55px;
-  border-top:1px solid var(--line);
-  padding:32px 20px;
-  text-align:center;
-  color:#758092;
-  font-size:12px;
+ margin-top:50px;
+ border-top:1px solid var(--line);
+ padding:32px 20px;
+ text-align:center;
+ color:#748092;
+ font-size:12px;
 }
 
-/* RESPONSIVO */
-
 @media(max-width:900px){
-
-  .hero-grid{
-    grid-template-columns:1fr;
-  }
-
-  .games{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .articles{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .navlinks{
-    display:none;
-  }
-
-  .search input{
-    width:190px;
-  }
+ .heroGrid{grid-template-columns:1fr}
+ .games{grid-template-columns:repeat(2,1fr)}
+ .wikiGrid{grid-template-columns:repeat(2,1fr)}
+ .articles{grid-template-columns:repeat(2,1fr)}
+ .navlinks{display:none}
 }
 
 @media(max-width:560px){
-
-  .nav{
-    padding:10px 14px;
-  }
-
-  .search{
-    display:none;
-  }
-
-  .hero{
-    padding-top:55px;
-  }
-
-  .hero h1{
-    font-size:48px;
-  }
-
-  .games,
-  .articles{
-    grid-template-columns:1fr;
-  }
-
-  .stats{
-    grid-template-columns:repeat(3,1fr);
-  }
-
-  .section{
-    padding-left:15px;
-    padding-right:15px;
-  }
-
-  .info-grid{
-    grid-template-columns:1fr;
-  }
+ .search{display:none}
+ .hero{padding-top:50px}
+ .games,.wikiGrid,.articles{grid-template-columns:1fr}
+ .gameTitle{align-items:flex-start}
+ .gameTitle h1{font-size:29px}
+ .articleBox h1{font-size:29px}
 }
 </style>
 </head>
@@ -566,31 +501,30 @@ footer{
 <body>
 
 <div class="topbar">
-📚 BloxLdr Wiki • Guias, informações e novidades sobre jogos Roblox
+📚 BloxLdr Wiki • Seu guia para o universo dos jogos Roblox
 </div>
 
 <header>
 
 <nav class="nav">
 
-<a href="#" class="logo" onclick="home()">
-<span class="logo-icon"></span>
+<a class="logo" href="#" onclick="showHome()">
+<span class="logoIcon"></span>
 BloxLdr
 </a>
 
 <div class="navlinks">
-<a href="#jogos">Jogos</a>
-<a href="#guias">Guias</a>
-<a href="#novidades">Novidades</a>
-<a href="#sobre">Sobre</a>
+<a href="#jogos" onclick="showHome()">Jogos</a>
+<a href="#guias" onclick="showHome()">Guias</a>
+<a href="#sobre" onclick="showHome()">Sobre</a>
 </div>
 
 <div class="search">
 <span>⌕</span>
 <input
-id="globalSearch"
-placeholder="Pesquisar..."
-oninput="globalSearch(this.value)"
+id="search"
+placeholder="Pesquisar jogo..."
+oninput="searchGames(this.value)"
 >
 </div>
 
@@ -598,13 +532,14 @@ oninput="globalSearch(this.value)"
 
 </header>
 
-<main>
 
-<!-- HERO -->
+<!-- HOME -->
+
+<main id="home">
 
 <section class="hero">
 
-<div class="hero-grid">
+<div class="heroGrid">
 
 <div>
 
@@ -619,9 +554,9 @@ Aprenda.<br>
 </h1>
 
 <p>
-Uma central de informações para descobrir jogos,
-entender sistemas, encontrar guias e acompanhar
-novidades do universo Roblox.
+Uma wiki independente para descobrir jogos,
+aprender sistemas, consultar guias e encontrar
+informações úteis enquanto você joga.
 </p>
 
 <div class="buttons">
@@ -635,26 +570,23 @@ onclick="document.getElementById('jogos').scrollIntoView()">
 <button
 class="btn"
 onclick="document.getElementById('guias').scrollIntoView()">
-📚 Ver guias
+📚 Guias
 </button>
 
 </div>
 
 </div>
 
-<div class="hero-card">
+<div class="heroCard">
 
-<div class="eyebrow">
-BLOXLDR WIKI
-</div>
+<div class="eyebrow">BLOXLDR WIKI</div>
 
-<h2>
-Seu ponto de partida no Roblox.
-</h2>
+<h2>Conheça melhor seus jogos.</h2>
 
 <p>
-Conteúdo organizado por jogo para você encontrar
-o que procura sem complicação.
+Escolha um jogo e encontre guias,
+sistemas, itens, mapas, dicas e perguntas
+frequentes.
 </p>
 
 <div class="stats">
@@ -665,13 +597,13 @@ o que procura sem complicação.
 </div>
 
 <div class="stat">
-<strong>50+</strong>
-<small>guias</small>
+<strong>72</strong>
+<small>artigos</small>
 </div>
 
 <div class="stat">
 <strong>∞</strong>
-<small>ideias</small>
+<small>expansão</small>
 </div>
 
 </div>
@@ -683,16 +615,15 @@ o que procura sem complicação.
 </section>
 
 
-<!-- JOGOS -->
-
 <section class="section" id="jogos">
 
-<div class="section-head">
+<div class="sectionHead">
 
-<div>
 <h2>🎮 Jogos</h2>
-<p>Escolha um jogo para abrir sua central de informações.</p>
-</div>
+
+<p>
+Escolha um jogo para acessar sua Wiki.
+</p>
 
 </div>
 
@@ -701,60 +632,15 @@ o que procura sem complicação.
 </section>
 
 
-<!-- GUIAS -->
-
 <section class="section" id="guias">
 
-<div class="section-head">
+<div class="sectionHead">
 
-<div>
-<h2>📚 Guias e conteúdos</h2>
-<p>Conteúdos rápidos para consultar enquanto você joga.</p>
-</div>
+<h2>📚 Conteúdos</h2>
 
-</div>
-
-<div class="search-box">
-
-<input
-id="contentSearch"
-placeholder="Pesquisar jogo, guia ou assunto..."
-oninput="filterContent(this.value)"
->
-
-</div>
-
-<div class="filters">
-
-<button
-class="chip active"
-onclick="setFilter('Todos',this)">
-Todos
-</button>
-
-<button
-class="chip"
-onclick="setFilter('Guias',this)">
-Guias
-</button>
-
-<button
-class="chip"
-onclick="setFilter('Sistemas',this)">
-Sistemas
-</button>
-
-<button
-class="chip"
-onclick="setFilter('Mapas',this)">
-Mapas
-</button>
-
-<button
-class="chip"
-onclick="setFilter('Atualizações',this)">
-Atualizações
-</button>
+<p>
+Alguns dos principais assuntos disponíveis.
+</p>
 
 </div>
 
@@ -763,70 +649,18 @@ Atualizações
 </section>
 
 
-<!-- NOVIDADES -->
-
-<section class="section" id="novidades">
-
-<div class="section-head">
-
-<div>
-<h2>🆕 Novidades</h2>
-<p>Área para acompanhar mudanças nos jogos.</p>
-</div>
-
-</div>
-
-<div class="articles">
-
-<div class="article">
-<div class="article-icon">🔔</div>
-<h3>Atualizações dos jogos</h3>
-<p>
-Novos conteúdos, eventos, sistemas e mudanças
-podem ser organizados aqui.
-</p>
-</div>
-
-<div class="article">
-<div class="article-icon">🧭</div>
-<h3>Novos guias</h3>
-<p>
-A biblioteca pode crescer conforme novos conteúdos
-forem adicionados ao BloxLdr.
-</p>
-</div>
-
-<div class="article">
-<div class="article-icon">⭐</div>
-<h3>Favoritos</h3>
-<p>
-Salve seus jogos preferidos para encontrá-los
-rapidamente neste navegador.
-</p>
-</div>
-
-</div>
-
-</section>
-
-
-<!-- SOBRE -->
-
 <section class="section" id="sobre">
 
-<div class="hero-card">
+<div class="heroCard">
 
-<div class="eyebrow">
-SOBRE O BLOXLDR
-</div>
+<div class="eyebrow">SOBRE</div>
 
-<h2>
-Uma wiki feita para jogadores.
-</h2>
+<h2>BloxLdr Wiki</h2>
 
 <p>
-O BloxLdr organiza informações sobre jogos Roblox
-em páginas simples, rápidas e fáceis de consultar.
+Projeto independente criado para organizar
+informações sobre jogos Roblox de maneira
+simples e fácil de consultar.
 </p>
 
 </div>
@@ -834,6 +668,70 @@ em páginas simples, rápidas e fáceis de consultar.
 </section>
 
 </main>
+
+
+<!-- PÁGINA DO JOGO -->
+
+<section class="gamePage" id="gamePage">
+
+<button class="back" onclick="showHome()">
+← Voltar para jogos
+</button>
+
+<div class="gameHero">
+
+<div class="gameTitle">
+
+<div class="bigIcon" id="gameIcon"></div>
+
+<div>
+
+<div class="eyebrow" id="gameCategory"></div>
+
+<h1 id="gameName"></h1>
+
+<p id="gameDescription"></p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="wikiGrid" id="wikiGrid"></div>
+
+</section>
+
+
+<!-- ARTIGO -->
+
+<section class="articlePage" id="articlePage">
+
+<button class="back" onclick="backToGame()">
+← Voltar para o jogo
+</button>
+
+<div class="articleBox">
+
+<div class="articleTop">
+
+<div>
+
+<div class="eyebrow" id="articleCategory"></div>
+
+<h1 id="articleTitle"></h1>
+
+</div>
+
+<button class="closeBtn" onclick="backToGame()">✕</button>
+
+</div>
+
+<div class="articleContent" id="articleContent"></div>
+
+</div>
+
+</section>
 
 
 <footer>
@@ -845,175 +743,696 @@ Roblox é uma marca de seus respectivos proprietários.
 </footer>
 
 
-<!-- MODAL -->
-
-<div
-class="modal-bg"
-id="modal"
-onclick="outsideModal(event)"
->
-
-<div class="modal">
-
-<div class="modal-top">
-
-<div>
-
-<div class="eyebrow" id="modalCategory">
-JOGO
-</div>
-
-<h2 id="modalTitle"></h2>
-
-</div>
-
-<button
-class="close"
-onclick="closeModal()">
-✕
-</button>
-
-</div>
-
-<p
-class="modal-description"
-id="modalDescription">
-</p>
-
-<div
-class="info-grid"
-id="modalInfo">
-</div>
-
-<div
-class="guide-list"
-id="modalGuides">
-</div>
-
-</div>
-
-</div>
-
-
 <script>
 
-const gamesData = [
+/* =========================
+   JOGOS
+========================= */
+
+const games=[
 
 {
-icon:"🍎",
 name:"Blox Fruits",
+icon:"🍎",
 category:"Aventura • RPG",
-short:"Frutas, ilhas, espadas e progressão.",
-description:"Explore o mundo de Blox Fruits, conheça frutas, estilos de luta, espadas, raças, ilhas e sistemas de progressão."
+description:"Explore um mundo de aventura, combate, frutas, ilhas e progressão.",
 },
 
 {
-icon:"🏠",
 name:"Brookhaven",
+icon:"🏠",
 category:"Roleplay",
-short:"Casas, veículos, profissões e roleplay.",
-description:"Um universo de roleplay onde jogadores criam histórias usando casas, veículos, locais e diferentes personagens."
+description:"Crie histórias, explore a cidade, personalize seu personagem e participe de experiências de roleplay.",
 },
 
 {
-icon:"🌲",
 name:"99 Nights in the Forest",
+icon:"🌲",
 category:"Sobrevivência",
-short:"Floresta, noites, recursos e exploração.",
-description:"Sobreviva às noites, explore a floresta, administre recursos e descubra formas de avançar."
+description:"Explore a floresta, administre recursos e tente sobreviver às noites.",
 },
 
 {
-icon:"🔫",
 name:"RIVALS",
+icon:"🔫",
 category:"FPS • Competitivo",
-short:"Combate, armas, mapas e partidas.",
-description:"Jogo competitivo focado em partidas, armas, precisão, movimentação e diferentes mapas."
+description:"Partidas competitivas de combate com diferentes armas, mapas e estratégias.",
 },
 
 {
-icon:"🔪",
 name:"Murder Mystery 2",
+icon:"🔪",
 category:"Mistério",
-short:"Detetive, xerife, assassino e coleções.",
-description:"Descubra os papéis de cada rodada e conheça sistemas, itens, coleções e estratégias gerais."
+description:"Descubra seu papel, sobreviva às rodadas e tente descobrir quem é o assassino.",
 },
 
 {
-icon:"🌱",
 name:"Grow a Garden",
+icon:"🌱",
 category:"Simulação",
-short:"Jardim, sementes, plantas e evolução.",
-description:"Cultive seu jardim, conheça sementes, plantas, recursos e sistemas de evolução."
+description:"Cultive seu jardim, cuide das plantas e acompanhe sua evolução.",
 },
 
 {
-icon:"🧠",
 name:"Steal a Brainrot",
+icon:"🧠",
 category:"Coleção • Meme",
-short:"Brainrots, coleção, dinheiro e eventos.",
-description:"Conheça os brainrots, sistemas de coleção, economia e eventos do jogo."
+description:"Colecione brainrots e explore os sistemas e eventos do jogo.",
 },
 
 {
-icon:"👗",
 name:"Dress to Impress",
+icon:"👗",
 category:"Moda",
-short:"Temas, looks, passarelas e competições.",
-description:"Monte looks de acordo com temas, participe das passarelas e conheça os sistemas de moda."
+description:"Monte visuais de acordo com temas e participe das competições.",
 },
 
 {
-icon:"🐾",
 name:"Adopt Me!",
+icon:"🐾",
 category:"Roleplay • Pets",
-short:"Pets, casas, trocas e eventos.",
-description:"Cuide de pets, personalize sua casa, explore eventos e conheça os sistemas do jogo."
+description:"Cuide de pets, personalize sua casa e participe das atividades do jogo.",
 },
 
 {
-icon:"🚪",
 name:"DOORS",
+icon:"🚪",
 category:"Terror • Aventura",
-short:"Salas, entidades, itens e sobrevivência.",
-description:"Avance pelas salas, reconheça entidades, utilize itens e aprenda os principais sistemas de sobrevivência."
+description:"Atravesse salas, reconheça perigos e tente sobreviver à jornada.",
 },
 
 {
-icon:"⚔️",
 name:"The Strongest Battlegrounds",
+icon:"⚔️",
 category:"Combate",
-short:"Personagens, habilidades e batalhas.",
-description:"Conheça personagens, habilidades, combos, arenas e fundamentos do combate."
+description:"Entre em batalhas, aprenda habilidades e domine os fundamentos do combate.",
 },
 
 {
-icon:"🛏️",
 name:"BedWars",
+icon:"🛏️",
 category:"PvP • Estratégia",
-short:"Bases, recursos, kits e combate.",
-description:"Construa sua base, colete recursos, escolha kits e enfrente outros jogadores."
+description:"Proteja sua cama, consiga recursos e enfrente outras equipes."
 }
 
 ];
 
 
-let currentFilter="Todos";
-let currentSearch="";
+/* =========================
+   CONTEÚDO
+========================= */
+
+const topics=[
+
+{
+id:"beginner",
+icon:"📖",
+title:"Guia para iniciantes"
+},
+
+{
+id:"systems",
+icon:"⚙️",
+title:"Sistemas principais"
+},
+
+{
+id:"items",
+icon:"🎒",
+title:"Itens e recursos"
+},
+
+{
+id:"maps",
+icon:"🗺️",
+title:"Mapas e locais"
+},
+
+{
+id:"tips",
+icon:"💡",
+title:"Dicas importantes"
+},
+
+{
+id:"faq",
+icon:"❓",
+title:"Perguntas frequentes"
+}
+
+];
 
 
-function renderGames(){
+/* =========================
+   TEXTOS DOS ARTIGOS
+========================= */
 
-const container=document.getElementById("games");
+const content={
 
-container.innerHTML=gamesData.map((game,index)=>`
+"Blox Fruits":{
 
-<article
+beginner:[
+"Começando em Blox Fruits",
+"Seu primeiro objetivo deve ser entender o ciclo básico do jogo: aceitar missões, derrotar inimigos, receber recompensas e usar os recursos obtidos para continuar progredindo.",
+[
+"Escolha seu lado e explore a área inicial.",
+"Use as missões para ganhar experiência e dinheiro.",
+"Aprenda os controles de combate e movimentação.",
+"Evite gastar todos os recursos imediatamente.",
+"Conheça novas ilhas conforme sua progressão aumenta."
+]
+],
+
+systems:[
+"Principais sistemas de Blox Fruits",
+"O jogo combina progressão de personagem, combate e exploração. Cada sistema contribui para diferentes formas de jogar.",
+[
+"Frutas: fornecem habilidades especiais.",
+"Combate: inclui ataques básicos e estilos de luta.",
+"Espadas: oferecem outra forma de causar dano.",
+"Atributos: permitem desenvolver diferentes características.",
+"Ilhas: funcionam como áreas de exploração e progressão."
+]
+],
+
+items:[
+"Itens e recursos",
+"Existem diferentes tipos de recursos utilizados durante a progressão.",
+[
+"Frutas",
+"Espadas",
+"Armas",
+"Acessórios",
+"Dinheiro do jogo",
+"Materiais e recursos de evolução"
+]
+],
+
+maps:[
+"Mapas e locais",
+"O mundo é dividido em grandes áreas de exploração. Conforme o jogador progride, novas regiões ficam disponíveis.",
+[
+"Área inicial",
+"Ilhas de progressão",
+"Locais de treinamento",
+"Áreas de chefes",
+"Locais de comércio",
+"Regiões avançadas"
+]
+],
+
+tips:[
+"Dicas importantes",
+[
+"Concentre sua progressão em vez de tentar evoluir tudo ao mesmo tempo.",
+"Aprenda a movimentação antes de enfrentar inimigos difíceis.",
+"Use o mapa para planejar seus próximos objetivos.",
+"Guarde recursos importantes até saber onde eles serão úteis.",
+"Experimente diferentes estilos para descobrir qual combina com você."
+]
+],
+
+faq:[
+"Perguntas frequentes",
+[
+["Como começo?","Faça as primeiras missões e aprenda o ciclo de combate e progressão."],
+["Preciso conhecer todas as frutas?","Não. Comece entendendo as mecânicas básicas."],
+["É necessário jogar em grupo?","Não. É possível aprender grande parte do jogo sozinho."],
+["O conteúdo pode mudar?","Sim. Jogos Roblox recebem atualizações, então informações podem mudar."]
+]
+]
+
+},
+
+
+"Brookhaven":{
+
+beginner:[
+"Começando em Brookhaven",
+"Brookhaven é focado em experiências de roleplay. O objetivo principal é criar situações e histórias dentro da cidade.",
+[
+"Explore a cidade.",
+"Conheça casas e locais públicos.",
+"Experimente diferentes personagens.",
+"Use veículos para explorar.",
+"Crie histórias com outros jogadores."
+]
+],
+
+systems:[
+"Sistemas principais",
+[
+"Roleplay",
+"Casas",
+"Veículos",
+"Personagens",
+"Locais públicos",
+"Interações sociais"
+]
+],
+
+items:[
+"Itens e recursos",
+"Os elementos de Brookhaven são principalmente ferramentas para criar experiências de roleplay.",
+[
+"Veículos",
+"Casas",
+"Roupas e aparência",
+"Objetos de roleplay",
+"Locais da cidade"
+]
+],
+
+maps:[
+"Mapa e locais",
+"A cidade possui diversos ambientes que podem ser usados nas histórias.",
+[
+"Residências",
+"Escola",
+"Hospital",
+"Delegacia",
+"Lojas",
+"Áreas de lazer"
+]
+],
+
+tips:[
+"Dicas importantes",
+[
+"Use os locais da cidade para criar histórias diferentes.",
+"Combine veículos e casas para criar cenários.",
+"Explore áreas que você ainda não conhece.",
+"Combine ideias com outros jogadores.",
+"Não existe apenas uma maneira correta de jogar roleplay."
+]
+],
+
+faq:[
+"Perguntas frequentes",
+[
+["Qual é o objetivo?","Criar e participar de experiências de roleplay."],
+["Preciso jogar com amigos?","Não, mas jogar com outras pessoas pode ampliar as possibilidades."],
+["Posso explorar a cidade?","Sim."],
+["Brookhaven tem combate como foco?","Não. O foco principal é roleplay e exploração."]
+]
+]
+
+},
+
+
+"99 Nights in the Forest":{
+
+beginner:[
+"Começando na floresta",
+"O início exige atenção aos recursos e à sobrevivência. Aprender a administrar o que você encontra é uma das primeiras habilidades.",
+[
+"Explore durante os períodos mais seguros.",
+"Recolha recursos.",
+"Organize sua área de sobrevivência.",
+"Observe o ciclo entre dia e noite.",
+"Evite gastar recursos sem necessidade."
+]
+],
+
+systems:[
+"Sistemas principais",
+[
+"Sobrevivência",
+"Recursos",
+"Acampamento",
+"Exploração",
+"Ciclo de dia e noite",
+"Cooperação"
+]
+],
+
+items:[
+"Itens e recursos",
+[
+"Madeira",
+"Recursos de coleta",
+"Ferramentas",
+"Recursos para construção",
+"Itens de sobrevivência"
+]
+],
+
+maps:[
+"Mapa e exploração",
+"A floresta é formada por áreas que podem ser exploradas para encontrar recursos e pontos importantes.",
+[
+"Acampamento",
+"Floresta",
+"Áreas de coleta",
+"Locais de exploração",
+"Regiões perigosas"
+]
+],
+
+tips:[
+"Dicas importantes",
+[
+"Não se afaste demais sem planejar o retorno.",
+"Priorize recursos úteis para sua sobrevivência.",
+"Organize sua base.",
+"Preste atenção aos sinais de perigo.",
+"Quando jogar em equipe, divida as tarefas."
+]
+],
+
+faq:[
+"Perguntas frequentes",
+[
+["O jogo é focado em sobrevivência?","Sim."],
+["Posso jogar com outras pessoas?","Sim."],
+["O que devo aprender primeiro?","Coleta, exploração e gerenciamento de recursos."],
+["A noite muda a experiência?","O ciclo de noite faz parte central da sobrevivência."]
+]
+]
+
+},
+
+
+"RIVALS":{
+
+beginner:[
+"Começando em RIVALS",
+"RIVALS é focado em partidas competitivas. Para começar, aprenda movimentação, mira e funcionamento das partidas.",
+[
+"Conheça os controles.",
+"Pratique sua mira.",
+"Aprenda os mapas.",
+"Teste diferentes armas.",
+"Observe como outros jogadores se movimentam."
+]
+],
+
+systems:[
+"Sistemas principais",
+[
+"Combate",
+"Armas",
+"Mira",
+"Movimentação",
+"Mapas",
+"Partidas competitivas"
+]
+],
+
+items:[
+"Armas e recursos",
+"Os equipamentos determinam diferentes possibilidades durante uma partida.",
+[
+"Armas de curto alcance",
+"Armas de longo alcance",
+"Equipamentos de apoio",
+"Loadouts",
+"Recursos de partida"
+]
+],
+
+maps:[
+"Mapas",
+"Conhecer o espaço ao redor é importante em jogos competitivos.",
+[
+"Áreas abertas",
+"Corredores",
+"Pontos de cobertura",
+"Rotas alternativas",
+"Áreas de confronto"
+]
+],
+
+tips:[
+"Dicas importantes",
+[
+"Não fique parado durante uma partida.",
+"Aprenda uma arma antes de trocar constantemente.",
+"Use cobertura.",
+"Observe os sons e movimentos ao redor.",
+"Conheça as rotas dos mapas."
+]
+],
+
+faq:[
+"Perguntas frequentes",
+[
+["Preciso ter ótima mira para começar?","Não. A prática faz parte da progressão."],
+["Devo aprender todos os mapas?","Conhecer os mapas ajuda bastante."],
+["Jogar em equipe é importante?","A comunicação pode melhorar a organização da equipe."],
+["Existe uma única arma correta?","Diferentes armas podem funcionar melhor para diferentes estilos."]
+]
+]
+
+},
+
+
+"Murder Mystery 2":{
+
+beginner:[
+"Começando em Murder Mystery 2",
+"Cada rodada coloca os jogadores em funções diferentes. O primeiro passo é entender o objetivo da função que você recebeu.",
+[
+"Leia seu papel no início da rodada.",
+"Observe o comportamento dos jogadores.",
+"Aprenda as rotas do mapa.",
+"Tenha sempre uma rota de fuga.",
+"Não tome decisões apenas por uma suspeita."
+]
+],
+
+systems:[
+"Papéis e sistemas principais",
+[
+"Inocente: tenta sobreviver e ajudar a identificar o perigo.",
+"Xerife: possui a arma e tenta deter o assassino.",
+"Assassino: tenta eliminar os demais jogadores.",
+"Herói: pode surgir quando um inocente pega a arma deixada pelo Xerife.",
+"Mapas: influenciam rotas e possibilidades de fuga."
+]
+],
+
+items:[
+"Itens e coleções",
+[
+"Facas",
+"Armas",
+"Efeitos",
+"Caixas",
+"Moedas",
+"Cosméticos"
+]
+],
+
+maps:[
+"Mapas e locais",
+"Conhecer o mapa ajuda principalmente na movimentação e na escolha de rotas.",
+[
+"Rotas de fuga",
+"Corredores",
+"Áreas abertas",
+"Escadas",
+"Salas",
+"Locais com poucas saídas"
+]
+],
+
+tips:[
+"Dicas importantes",
+[
+"Como inocente, mantenha uma rota de fuga.",
+"Como Xerife, evite disparos precipitados.",
+"Como assassino, observe antes de agir.",
+"Aprenda os mapas.",
+"Preste atenção a sons e movimentações."
+]
+],
+
+faq:[
+"Perguntas frequentes",
+[
+["Quais são os papéis principais?","Inocente, Xerife e Assassino."],
+["O que acontece se o Xerife morrer?","A arma pode ficar disponível para outro jogador."],
+["Mapas são importantes?","Sim, conhecer rotas ajuda bastante."],
+["Preciso trocar itens para jogar?","Não. As rodadas principais podem ser jogadas sem depender de trocas."]
+]
+]
+
+}
+
+};
+
+
+/* =========================
+   CONTEÚDO GENÉRICO
+   PARA OS OUTROS JOGOS
+========================= */
+
+const generic={
+
+"Grow a Garden":"Cultivo, sementes, plantas, evolução e administração do jardim.",
+
+"Steal a Brainrot":"Coleção, brainrots, recursos, eventos e progressão.",
+
+"Dress to Impress":"Moda, temas, roupas, combinações, passarela e votação.",
+
+"Adopt Me!":"Pets, casas, atividades, personalização e eventos.",
+
+"DOORS":"Exploração, salas, itens, entidades e sobrevivência.",
+
+"The Strongest Battlegrounds":"Combate, personagens, habilidades, movimentação e arenas.",
+
+"BedWars":"Bases, recursos, equipes, kits, combate e estratégia."
+
+};
+
+
+function genericArticle(game,topic){
+
+let base=generic[game.name];
+
+if(topic.id==="beginner"){
+
+return [
+
+"Guia para iniciantes",
+
+`Este é o ponto de partida para aprender ${game.name}. ${base}`,
+
+[
+
+"Conheça os controles e a interface.",
+
+"Explore o ambiente antes de tentar fazer tudo.",
+
+"Aprenda os sistemas básicos.",
+
+"Observe como os recursos são utilizados.",
+
+"Experimente diferentes formas de jogar."
+
+]
+
+];
+
+}
+
+if(topic.id==="systems"){
+
+return [
+
+"Sistemas principais",
+
+`Os principais sistemas de ${game.name} estão ligados à sua progressão e à maneira como o jogador interage com o jogo.`,
+
+[
+"Progressão do jogador",
+"Recursos",
+"Interações",
+"Atividades principais",
+"Eventos e atualizações",
+"Personalização"
+]
+
+];
+
+}
+
+if(topic.id==="items"){
+
+return [
+
+"Itens e recursos",
+
+`Os itens e recursos de ${game.name} ajudam o jogador a participar das atividades e desenvolver sua experiência.`,
+
+[
+"Itens de progressão",
+"Recursos do jogo",
+"Equipamentos",
+"Itens cosméticos",
+"Recompensas",
+"Recursos de eventos"
+]
+
+];
+
+}
+
+if(topic.id==="maps"){
+
+return [
+
+"Mapas e locais",
+
+`Conhecer os diferentes ambientes de ${game.name} ajuda o jogador a entender onde encontrar atividades, recursos e áreas importantes.`,
+
+[
+"Área inicial",
+"Áreas principais",
+"Locais de atividade",
+"Áreas especiais",
+"Rotas de exploração",
+"Locais adicionados por atualizações"
+]
+
+];
+
+}
+
+if(topic.id==="tips"){
+
+return [
+
+"Dicas importantes",
+
+`Algumas práticas simples podem facilitar sua experiência em ${game.name}.`,
+
+[
+"Aprenda primeiro as mecânicas básicas.",
+"Não tente dominar tudo de uma vez.",
+"Explore áreas diferentes.",
+"Observe jogadores experientes.",
+"Guarde recursos importantes.",
+"Confira mudanças depois de grandes atualizações."
+]
+
+];
+
+}
+
+return [
+
+"Perguntas frequentes",
+
+[
+["Como começo?","Explore a área inicial e aprenda as mecânicas básicas."],
+["Preciso jogar com outras pessoas?","Depende do jogo. Muitos conteúdos podem ser explorados sozinho ou em grupo."],
+["O jogo recebe atualizações?","Experiências Roblox podem receber atualizações e mudanças."],
+["Onde encontro novos conteúdos?","A Wiki pode receber novos artigos conforme o projeto cresce."]
+]
+
+];
+
+}
+
+
+/* =========================
+   RENDER DOS JOGOS
+========================= */
+
+const gamesContainer=document.getElementById("games");
+
+games.forEach((game,index)=>{
+
+gamesContainer.innerHTML+=`
+
+<div
 class="game"
 onclick="openGame(${index})"
 >
 
-<div class="game-icon">
+<div class="gameIcon">
 ${game.icon}
 </div>
 
@@ -1022,321 +1441,266 @@ ${game.name}
 </h3>
 
 <p>
-${game.short}
+${game.description}
 </p>
 
 <span class="tag">
 ${game.category}
 </span>
 
-</article>
-
-`).join("");
-
-}
-
-
-function createArticles(){
-
-let articles=[];
-
-gamesData.forEach((game,index)=>{
-
-articles.push({
-
-type:"Guias",
-
-icon:"📖",
-
-title:`Guia para começar — ${game.name}`,
-
-description:
-`Primeiros passos, sistemas básicos e informações importantes sobre ${game.name}.`,
-
-game:index
-
-});
-
-articles.push({
-
-type:"Sistemas",
-
-icon:"⚙️",
-
-title:`Sistemas de ${game.name}`,
-
-description:
-`Entenda os principais sistemas e recursos encontrados no jogo.`,
-
-game:index
-
-});
-
-articles.push({
-
-type:"Mapas",
-
-icon:"🗺️",
-
-title:`Mapa e locais — ${game.name}`,
-
-description:
-`Conheça áreas e locais importantes do universo de ${game.name}.`,
-
-game:index
-
-});
-
-});
-
-return articles;
-
-}
-
-
-function renderArticles(){
-
-let articles=createArticles();
-
-if(currentFilter!=="Todos"){
-
-articles=articles.filter(
-article=>article.type===currentFilter
-);
-
-}
-
-if(currentSearch){
-
-articles=articles.filter(article=>{
-
-const text=
-article.title+
-article.description+
-gamesData[article.game].name;
-
-return text
-.toLowerCase()
-.includes(currentSearch.toLowerCase());
-
-});
-
-}
-
-const container=document.getElementById("articles");
-
-if(articles.length===0){
-
-container.innerHTML=`
-<div class="article">
-<h3>Nenhum resultado encontrado.</h3>
-<p>
-Tente pesquisar outro nome ou assunto.
-</p>
 </div>
+
 `;
 
-return;
+});
 
-}
 
-container.innerHTML=articles.map(article=>`
+/* =========================
+   CONTEÚDOS NA HOME
+========================= */
 
-<div class="article">
+const articles=document.getElementById("articles");
 
-<div class="article-icon">
-${article.icon}
+games.slice(0,6).forEach((game,index)=>{
+
+articles.innerHTML+=`
+
+<div class="articleCard">
+
+<div class="mini">
+${game.icon}
 </div>
 
-<span class="tag">
-${article.type}
-</span>
-
 <h3>
-${article.title}
+Guia de ${game.name}
 </h3>
 
 <p>
-${article.description}
+Aprenda o básico, conheça os sistemas
+e descubra informações importantes.
 </p>
 
-<button
-onclick="openGame(${article.game})">
-Abrir página →
+<button onclick="openGame(${index})">
+Abrir Wiki →
 </button>
 
 </div>
 
-`).join("");
+`;
 
-}
-
-
-function setFilter(filter,button){
-
-currentFilter=filter;
-
-document
-.querySelectorAll(".chip")
-.forEach(chip=>{
-chip.classList.remove("active");
 });
 
-button.classList.add("active");
 
-renderArticles();
+/* =========================
+   ABRIR JOGO
+========================= */
 
-}
-
-
-function filterContent(value){
-
-currentSearch=value;
-
-renderArticles();
-
-}
-
-
-function globalSearch(value){
-
-if(!value){
-return;
-}
-
-document
-.getElementById("contentSearch")
-.value=value;
-
-document
-.getElementById("guias")
-.scrollIntoView({
-behavior:"smooth"
-});
-
-currentSearch=value;
-
-renderArticles();
-
-}
-
+let currentGame=null;
 
 function openGame(index){
 
-const game=gamesData[index];
+currentGame=index;
 
-document
-.getElementById("modalCategory")
-.textContent=game.category;
+const game=games[index];
 
-document
-.getElementById("modalTitle")
-.textContent=
+document.getElementById("home").style.display="none";
+
+document.getElementById("articlePage").style.display="none";
+
+document.getElementById("gamePage").style.display="block";
+
+document.getElementById("gameIcon").textContent=game.icon;
+
+document.getElementById("gameCategory").textContent=game.category;
+
+document.getElementById("gameName").textContent=game.name;
+
+document.getElementById("gameDescription").textContent=game.description;
+
+const grid=document.getElementById("wikiGrid");
+
+grid.innerHTML="";
+
+topics.forEach(topic=>{
+
+grid.innerHTML+=`
+
+<div class="wikiCard">
+
+<div class="icon">
+${topic.icon}
+</div>
+
+<h3>
+${topic.title}
+</h3>
+
+<p>
+Informações, explicações e conteúdo sobre
+${topic.title.toLowerCase()}.
+</p>
+
+<button onclick="openArticle('${topic.id}')">
+Ler artigo →
+</button>
+
+</div>
+
+`;
+
+});
+
+window.scrollTo({top:0,behavior:"smooth"});
+
+}
+
+
+/* =========================
+   ABRIR ARTIGO
+========================= */
+
+function openArticle(topicId){
+
+const game=games[currentGame];
+
+let data;
+
+if(content[game.name] && content[game.name][topicId]){
+
+data=content[game.name][topicId];
+
+}else{
+
+data=genericArticle(
+game,
+topics.find(t=>t.id===topicId)
+);
+
+}
+
+document.getElementById("gamePage").style.display="none";
+
+document.getElementById("articlePage").style.display="block";
+
+document.getElementById("articleCategory").textContent=
 game.icon+" "+game.name;
 
-document
-.getElementById("modalDescription")
-.textContent=
-game.description;
+document.getElementById("articleTitle").textContent=
+data[0];
 
-document
-.getElementById("modalInfo")
-.innerHTML=`
+const contentBox=document.getElementById("articleContent");
 
-<div class="info">
-<strong>Categoria</strong>
-<span>${game.category}</span>
-</div>
+contentBox.innerHTML="";
 
-<div class="info">
-<strong>Conteúdo</strong>
-<span>Guias e informações</span>
-</div>
 
-<div class="info">
-<strong>Wiki</strong>
-<span>BloxLdr</span>
-</div>
+if(topicId==="faq"){
 
-<div class="info">
-<strong>Status</strong>
-<span>Conteúdo em expansão</span>
-</div>
+data[1].forEach(item=>{
+
+contentBox.innerHTML+=`
+
+<h2>
+${item[0]}
+</h2>
+
+<p>
+${item[1]}
+</p>
 
 `;
 
-document
-.getElementById("modalGuides")
-.innerHTML=`
+});
 
-<div class="guide">
-📖 Guia para iniciantes
+}else{
+
+contentBox.innerHTML+=`
+
+<p class="lead">
+${data[1]}
+</p>
+
+<div class="note">
+📌 Este artigo faz parte da Wiki BloxLdr.
+As informações podem mudar quando o jogo receber atualizações.
 </div>
 
-<div class="guide">
-⚙️ Sistemas principais
-</div>
+<h2>
+O que você precisa saber
+</h2>
 
-<div class="guide">
-🎒 Itens e recursos
-</div>
+<ul>
 
-<div class="guide">
-🗺️ Mapas e locais
-</div>
+${data[2].map(item=>`
+<li>${item}</li>
+`).join("")}
 
-<div class="guide">
-💡 Dicas importantes
-</div>
+</ul>
 
-<div class="guide">
-❓ Perguntas frequentes
-</div>
+<h2>
+Resumo
+</h2>
+
+<p>
+O melhor caminho é aprender uma mecânica de cada vez,
+explorar o jogo e entender como os diferentes sistemas
+se relacionam.
+</p>
 
 `;
 
-document
-.getElementById("modal")
-.classList.add("show");
+}
 
-document.body.style.overflow="hidden";
+window.scrollTo({top:0,behavior:"smooth"});
 
 }
 
 
-function closeModal(){
+/* =========================
+   VOLTAR
+========================= */
 
-document
-.getElementById("modal")
-.classList.remove("show");
+function backToGame(){
 
-document.body.style.overflow="";
+document.getElementById("articlePage").style.display="none";
 
-}
+document.getElementById("gamePage").style.display="block";
 
-
-function outsideModal(event){
-
-if(event.target.id==="modal"){
-closeModal();
-}
+window.scrollTo({top:0,behavior:"smooth"});
 
 }
 
 
-function home(){
+function showHome(){
 
-window.scrollTo({
-top:0,
-behavior:"smooth"
+document.getElementById("gamePage").style.display="none";
+
+document.getElementById("articlePage").style.display="none";
+
+document.getElementById("home").style.display="block";
+
+window.scrollTo({top:0,behavior:"smooth"});
+
+}
+
+
+/* =========================
+   BUSCA
+========================= */
+
+function searchGames(value){
+
+value=value.toLowerCase().trim();
+
+document.querySelectorAll(".game").forEach(card=>{
+
+const text=card.innerText.toLowerCase();
+
+card.style.display=
+text.includes(value) ? "block" : "none";
+
 });
 
 }
-
-
-renderGames();
-
-renderArticles();
 
 </script>
 
